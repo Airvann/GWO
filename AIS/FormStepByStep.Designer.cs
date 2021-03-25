@@ -30,10 +30,10 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStepByStep));
             this.label1 = new System.Windows.Forms.Label();
             this.buttonMove = new System.Windows.Forms.Button();
@@ -43,18 +43,18 @@
             this.buttonStart = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridViewAnswer = new System.Windows.Forms.DataGridView();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonAnswer = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridViewIterationInfo = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBoxDiagramm = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBoxGraph = new System.Windows.Forms.PictureBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAnswer)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -166,22 +166,8 @@
             this.dataGridViewAnswer.Location = new System.Drawing.Point(14, 30);
             this.dataGridViewAnswer.Name = "dataGridViewAnswer";
             this.dataGridViewAnswer.RowHeadersVisible = false;
-            this.dataGridViewAnswer.Size = new System.Drawing.Size(320, 111);
+            this.dataGridViewAnswer.Size = new System.Drawing.Size(320, 93);
             this.dataGridViewAnswer.TabIndex = 0;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Характеристика";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 139;
-            // 
-            // Column4
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column4.HeaderText = "Значение";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 110;
             // 
             // buttonAnswer
             // 
@@ -248,6 +234,24 @@
             this.dataGridViewIterationInfo.TabIndex = 1;
             this.dataGridViewIterationInfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // Column1
+            // 
+            this.Column1.Frozen = true;
+            this.Column1.HeaderText = "Характеристика";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 280;
+            // 
+            // Column2
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column2.Frozen = true;
+            this.Column2.HeaderText = "Значение";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column2.Width = 120;
+            // 
             // pictureBoxDiagramm
             // 
             this.pictureBoxDiagramm.Location = new System.Drawing.Point(25, 19);
@@ -290,23 +294,19 @@
             this.pictureBoxGraph.TabStop = false;
             this.pictureBoxGraph.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxGraph_Paint);
             // 
-            // Column1
+            // Column3
             // 
-            this.Column1.Frozen = true;
-            this.Column1.HeaderText = "Характеристика";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 280;
+            this.Column3.HeaderText = "Характеристика";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 150;
             // 
-            // Column2
+            // Column4
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column2.Frozen = true;
-            this.Column2.HeaderText = "Значение";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column2.Width = 120;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column4.HeaderText = "Значение";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 165;
             // 
             // FormStepByStep
             // 
@@ -358,11 +358,11 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridViewIterationInfo;
         private System.Windows.Forms.DataGridView dataGridViewAnswer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBoxGraph;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

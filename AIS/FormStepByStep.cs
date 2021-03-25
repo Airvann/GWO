@@ -440,8 +440,10 @@ namespace AIS
                 Red[3] = false;
                 algst.Selection();
 
-                dataGridViewAnswer.Rows[0].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[0]:F2}   {algst.alfa.coords.vector[1]:F2}");
-                dataGridViewAnswer.Rows[1].Cells[1].Value = String.Format($"{algst.alfa.fitness:F2}");
+                //TODO:!
+                dataGridViewAnswer.Rows[0].Cells[1].Value = string.Format($"{algst.alfa.coords[0]:F8}");
+                dataGridViewAnswer.Rows[1].Cells[1].Value = string.Format($"{algst.alfa.coords[1]:F8}");
+                dataGridViewAnswer.Rows[2].Cells[1].Value = string.Format($"{algst.alfa.fitness:F8}");
                 
                 dataGridViewIterationInfo.Rows[3].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[0]:F2}   {algst.alfa.coords.vector[1]:F2}");
                 dataGridViewIterationInfo.Rows[4].Cells[1].Value = String.Format($"{algst.alfa.fitness:F2}");
@@ -533,12 +535,13 @@ namespace AIS
 
                 algst.Selection();
 
-                dataGridViewAnswer.Rows[0].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[0]:F2}");
-                dataGridViewAnswer.Rows[1].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[1]:F2}");
-                dataGridViewAnswer.Rows[2].Cells[1].Value = String.Format($"{algst.alfa.fitness:F2}");
+                dataGridViewAnswer.Rows[0].Cells[1].Value = string.Format($"{algst.alfa.coords[0]:F8}");
+                dataGridViewAnswer.Rows[1].Cells[1].Value = string.Format($"{algst.alfa.coords[1]:F8}");
+                dataGridViewAnswer.Rows[2].Cells[1].Value = string.Format($"{algst.alfa.fitness:F8}");
 
                 dataGridViewIterationInfo.Rows[3].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[0]:F2}   {algst.alfa.coords.vector[1]:F2}");
                 dataGridViewIterationInfo.Rows[4].Cells[1].Value = String.Format($"{algst.alfa.fitness:F2}");
+                dataGridViewIterationInfo.Rows[5].Cells[1].Value = String.Format($"{algst.AverageFitness():F8}");
 
 
                 pictureBox1.Refresh();
