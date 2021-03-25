@@ -50,27 +50,37 @@ namespace AIS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //создать начальную популяцию
-            if ((comboBox1.SelectedIndex != -1) && (comboBoxSelectParams.SelectedIndex != -1))
+            if( dataGridView1.Rows[0].Cells[1].Value != null  &&
+                dataGridView1.Rows[0].Cells[2].Value != null  &&
+                dataGridView1.Rows[1].Cells[1].Value != null  &&
+                dataGridView1.Rows[1].Cells[2].Value!= null)
             {
-                int z = comboBox1.SelectedIndex;
+                //создать начальную популяцию
+                if ((comboBox1.SelectedIndex != -1) && (comboBoxSelectParams.SelectedIndex != -1))
+                {
+                    int z = comboBox1.SelectedIndex;
 
-                obl[0, 0] = Convert.ToDouble(dataGridView1.Rows[0].Cells[1].Value);
-                obl[0, 1] = Convert.ToDouble(dataGridView1.Rows[0].Cells[2].Value);
-                obl[1, 0] = Convert.ToDouble(dataGridView1.Rows[1].Cells[1].Value);
-                obl[1, 1] = Convert.ToDouble(dataGridView1.Rows[1].Cells[2].Value);
+                    obl[0, 0] = Convert.ToDouble(dataGridView1.Rows[0].Cells[1].Value);
+                    obl[0, 1] = Convert.ToDouble(dataGridView1.Rows[0].Cells[2].Value);
+                    obl[1, 0] = Convert.ToDouble(dataGridView1.Rows[1].Cells[1].Value);
+                    obl[1, 1] = Convert.ToDouble(dataGridView1.Rows[1].Cells[2].Value);
 
-                population = Convert.ToInt32(dataGridView2.Rows[0].Cells[1].Value);
-                MaxIteration = Convert.ToInt32(dataGridView2.Rows[1].Cells[1].Value);
-                Params param = (comboBoxSelectParams.SelectedIndex == 0) ? Params.Linear : Params.Quadratic;
-                alg = new Algoritm();
+                    population = Convert.ToInt32(dataGridView2.Rows[0].Cells[1].Value);
+                    MaxIteration = Convert.ToInt32(dataGridView2.Rows[1].Cells[1].Value);
+                    Params param = (comboBoxSelectParams.SelectedIndex == 0) ? Params.Linear : Params.Quadratic;
+                    alg = new Algoritm();
 
-                result = alg.StartAlg(population, MaxIteration, obl, z, param);
-                dataGridView3.Rows[0].Cells[1].Value = string.Format($"{result.coords[0]:F8}");
-                dataGridView3.Rows[1].Cells[1].Value = string.Format($"{result.coords[1]:F8}");
-                dataGridView3.Rows[2].Cells[1].Value = string.Format($"{result.fitness:F8}");
-                flag2 = true;
-                pictureBox1.Refresh();
+                    result = alg.StartAlg(population, MaxIteration, obl, z, param);
+                    dataGridView3.Rows[0].Cells[1].Value = string.Format($"{result.coords[0]:F8}");
+                    dataGridView3.Rows[1].Cells[1].Value = string.Format($"{result.coords[1]:F8}");
+                    dataGridView3.Rows[2].Cells[1].Value = string.Format($"{result.fitness:F8}");
+                    flag2 = true;
+                    pictureBox1.Refresh();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Введите корректные параметры области определения", "Ошибка три запуске алгоритма", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -477,11 +487,24 @@ namespace AIS
 
         private void comboBoxSelectParams_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             if ((comboBox1.SelectedIndex != -1)&&(comboBoxSelectParams.SelectedIndex != -1))
             {
                 buttonAnswer.Enabled = true;
                 buttonStepByStep.Enabled = true;
             }
+            switch (comboBoxSelectParams.SelectedIndex)
+            {
+                case 0:
+                    pictureBox4.Image = Properties.Resources._1;
+                    break;
+                case 1:
+                    pictureBox4.Image = Properties.Resources._2;
+                    break;
+                default:
+                    break;
+            }
+            pictureBox4.Refresh();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
