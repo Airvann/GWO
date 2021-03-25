@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="AIS">
+</Property><Property Name="Solution File" Value="C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\AIS.sln">
+</Property><Property Name="User Options File" Value="C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\AIS.suo">
+</Property><Property Name="Date" Value="24 октября 2011 г.">
+</Property><Property Name="Time" Value="15:02">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="AIS.sln" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS.sln">
+</Event><Event ErrorLevel="0" Project="" Source="AIS.suo" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS.suo">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\AIS.csproj" Description="Project file successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\AIS.csproj">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Algoritm.cs" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Algoritm.cs">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Form1.cs" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Form1.cs">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Form1.Designer.cs" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Form1.Designer.cs">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Form2.cs" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Form2.cs">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Form2.Designer.cs" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Form2.Designer.cs">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Form3.cs" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Form3.cs">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Form3.Designer.cs" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Form3.Designer.cs">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Form4.cs" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Form4.cs">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Form4.Designer.cs" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Form4.Designer.cs">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Form5.cs" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Form5.cs">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Form5.Designer.cs" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Form5.Designer.cs">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Program.cs" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Program.cs">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Properties\AssemblyInfo.cs" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Properties\Resources.Designer.cs" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Properties\Settings.Designer.cs" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Report.cs" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Report.cs">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Properties\Settings.settings" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Resources\Растринг1.bmp" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Resources\Растринг1.bmp">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Resources\Аклей31.bmp" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Resources\Аклей31.bmp">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Resources\мульти.bmp" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Resources\мульти.bmp">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Resources\рут.bmp" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Resources\рут.bmp">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Resources\шафер.bmp" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Resources\шафер.bmp">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Resources\швефель.bmp" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Resources\швефель.bmp">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Resources\постановка.bmp" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Resources\постановка.bmp">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Resources\постановка2.bmp" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Resources\постановка2.bmp">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Resources\постановка3.bmp" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Resources\постановка3.bmp">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Form1.resx" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Form1.resx">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Form2.resx" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Form2.resx">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Form3.resx" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Form3.resx">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Form4.resx" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Form4.resx">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Form5.resx" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Form5.resx">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\Properties\Resources.resx" Description="File successfully backed up as C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\Backup\AIS\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\AIS.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="AIS" Source="AIS\AIS.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="AIS.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="AIS.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="AIS" Source="AIS\AIS.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

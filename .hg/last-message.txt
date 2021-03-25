@@ -1,0 +1,1 @@
+Changed object copying (copying by value without link)

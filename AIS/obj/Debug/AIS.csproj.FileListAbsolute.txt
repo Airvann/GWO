@@ -1,0 +1,168 @@
+C:\Documents and Settings\111\Мои документы\Visual Studio 2008\Projects\AIS\AIS\bin\Debug\AIS.exe
+C:\Documents and Settings\111\Мои документы\Visual Studio 2008\Projects\AIS\AIS\bin\Debug\AIS.pdb
+C:\Documents and Settings\111\Мои документы\Visual Studio 2008\Projects\AIS\AIS\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\111\Мои документы\Visual Studio 2008\Projects\AIS\AIS\obj\Debug\AIS.Form1.resources
+C:\Documents and Settings\111\Мои документы\Visual Studio 2008\Projects\AIS\AIS\obj\Debug\AIS.Properties.Resources.resources
+C:\Documents and Settings\111\Мои документы\Visual Studio 2008\Projects\AIS\AIS\obj\Debug\AIS.csproj.GenerateResource.Cache
+C:\Documents and Settings\111\Мои документы\Visual Studio 2008\Projects\AIS\AIS\obj\Debug\AIS.exe
+C:\Documents and Settings\111\Мои документы\Visual Studio 2008\Projects\AIS\AIS\obj\Debug\AIS.pdb
+C:\Documents and Settings\Иван\Рабочий стол\AIS\AIS\obj\Debug\AIS.exe
+C:\Documents and Settings\Иван\Рабочий стол\AIS\AIS\obj\Debug\AIS.pdb
+C:\Documents and Settings\Иван\Рабочий стол\AIS\AIS\bin\Debug\AIS.exe
+C:\Documents and Settings\Иван\Рабочий стол\AIS\AIS\bin\Debug\AIS.pdb
+C:\Documents and Settings\Иван\Рабочий стол\AIS\AIS\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Иван\Рабочий стол\AIS\AIS\obj\Debug\AIS.Form1.resources
+C:\Documents and Settings\Иван\Рабочий стол\AIS\AIS\obj\Debug\AIS.Properties.Resources.resources
+C:\Documents and Settings\Иван\Рабочий стол\AIS\AIS\obj\Debug\AIS.csproj.GenerateResource.Cache
+C:\Documents and Settings\Иван\Рабочий стол\AIS\AIS\obj\Debug\AIS.Form2.resources
+C:\Documents and Settings\111\Рабочий стол\AIS\AIS\obj\Debug\AIS.exe
+C:\Documents and Settings\111\Рабочий стол\AIS\AIS\obj\Debug\AIS.pdb
+C:\Documents and Settings\111\Рабочий стол\AIS\AIS\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\111\Рабочий стол\AIS\AIS\obj\Debug\AIS.Form1.resources
+C:\Documents and Settings\111\Рабочий стол\AIS\AIS\obj\Debug\AIS.Form2.resources
+C:\Documents and Settings\111\Рабочий стол\AIS\AIS\obj\Debug\AIS.Properties.Resources.resources
+C:\Documents and Settings\111\Рабочий стол\AIS\AIS\obj\Debug\AIS.csproj.GenerateResource.Cache
+C:\Documents and Settings\111\Рабочий стол\AIS\AIS\bin\Debug\AIS.exe
+C:\Documents and Settings\111\Рабочий стол\AIS\AIS\bin\Debug\AIS.pdb
+C:\Documents and Settings\111\Рабочий стол\AIS\AIS\obj\Debug\AIS.Form3.resources
+C:\Documents and Settings\111\Рабочий стол\AIS\AIS\obj\Debug\AIS.Form4.resources
+C:\Documents and Settings\Иван\Рабочий стол\AIS(22.04)\AIS\obj\Debug\AIS.exe
+C:\Documents and Settings\Иван\Рабочий стол\AIS(22.04)\AIS\obj\Debug\AIS.pdb
+C:\Documents and Settings\Иван\Рабочий стол\AIS(22.04)\AIS\bin\Debug\AIS.exe
+C:\Documents and Settings\Иван\Рабочий стол\AIS(22.04)\AIS\bin\Debug\AIS.pdb
+C:\Documents and Settings\Иван\Рабочий стол\AIS(22.04)\AIS\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Иван\Рабочий стол\AIS(22.04)\AIS\obj\Debug\AIS.Form1.resources
+C:\Documents and Settings\Иван\Рабочий стол\AIS(22.04)\AIS\obj\Debug\AIS.Form2.resources
+C:\Documents and Settings\Иван\Рабочий стол\AIS(22.04)\AIS\obj\Debug\AIS.Form3.resources
+C:\Documents and Settings\Иван\Рабочий стол\AIS(22.04)\AIS\obj\Debug\AIS.Form4.resources
+C:\Documents and Settings\Иван\Рабочий стол\AIS(22.04)\AIS\obj\Debug\AIS.Properties.Resources.resources
+C:\Documents and Settings\Иван\Рабочий стол\AIS(22.04)\AIS\obj\Debug\AIS.csproj.GenerateResource.Cache
+C:\Documents and Settings\Иван\Рабочий стол\AIS(22.04)\AIS\obj\Debug\AIS.Form5.resources
+C:\Documents and Settings\111\Рабочий стол\AIS(22.04)\AIS\obj\Debug\AIS.exe
+C:\Documents and Settings\111\Рабочий стол\AIS(22.04)\AIS\obj\Debug\AIS.pdb
+C:\Documents and Settings\111\Рабочий стол\AIS(22.04)\AIS\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\111\Рабочий стол\AIS(22.04)\AIS\obj\Debug\AIS.Form1.resources
+C:\Documents and Settings\111\Рабочий стол\AIS(22.04)\AIS\obj\Debug\AIS.Form2.resources
+C:\Documents and Settings\111\Рабочий стол\AIS(22.04)\AIS\obj\Debug\AIS.Form3.resources
+C:\Documents and Settings\111\Рабочий стол\AIS(22.04)\AIS\obj\Debug\AIS.Form4.resources
+C:\Documents and Settings\111\Рабочий стол\AIS(22.04)\AIS\obj\Debug\AIS.Form5.resources
+C:\Documents and Settings\111\Рабочий стол\AIS(22.04)\AIS\obj\Debug\AIS.Properties.Resources.resources
+C:\Documents and Settings\111\Рабочий стол\AIS(22.04)\AIS\obj\Debug\AIS.csproj.GenerateResource.Cache
+C:\Documents and Settings\111\Рабочий стол\AIS(22.04)\AIS\bin\Debug\AIS.exe
+C:\Documents and Settings\111\Рабочий стол\AIS(22.04)\AIS\bin\Debug\AIS.pdb
+C:\Documents and Settings\Иван\Рабочий стол\AIS(25.04)\AIS\obj\Debug\AIS.exe
+C:\Documents and Settings\Иван\Рабочий стол\AIS(25.04)\AIS\obj\Debug\AIS.pdb
+C:\Documents and Settings\Иван\Рабочий стол\AIS(25.04)\AIS\bin\Debug\AIS.exe
+C:\Documents and Settings\Иван\Рабочий стол\AIS(25.04)\AIS\bin\Debug\AIS.pdb
+C:\Documents and Settings\Иван\Рабочий стол\AIS(25.04)\AIS\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Иван\Рабочий стол\AIS(25.04)\AIS\obj\Debug\AIS.Form1.resources
+C:\Documents and Settings\Иван\Рабочий стол\AIS(25.04)\AIS\obj\Debug\AIS.Form2.resources
+C:\Documents and Settings\Иван\Рабочий стол\AIS(25.04)\AIS\obj\Debug\AIS.Form3.resources
+C:\Documents and Settings\Иван\Рабочий стол\AIS(25.04)\AIS\obj\Debug\AIS.Form4.resources
+C:\Documents and Settings\Иван\Рабочий стол\AIS(25.04)\AIS\obj\Debug\AIS.Form5.resources
+C:\Documents and Settings\Иван\Рабочий стол\AIS(25.04)\AIS\obj\Debug\AIS.Properties.Resources.resources
+C:\Documents and Settings\Иван\Рабочий стол\AIS(25.04)\AIS\obj\Debug\AIS.csproj.GenerateResource.Cache
+C:\Documents and Settings\Иван\Рабочий стол\маи\AIS(25.04)\AIS\obj\Debug\AIS.exe
+C:\Documents and Settings\Иван\Рабочий стол\маи\AIS(25.04)\AIS\obj\Debug\AIS.pdb
+C:\Documents and Settings\Иван\Рабочий стол\маи\AIS(25.04)\AIS\bin\Debug\AIS.exe
+C:\Documents and Settings\Иван\Рабочий стол\маи\AIS(25.04)\AIS\bin\Debug\AIS.pdb
+C:\Documents and Settings\Иван\Рабочий стол\маи\AIS(25.04)\AIS\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Иван\Рабочий стол\маи\AIS(25.04)\AIS\obj\Debug\AIS.Form1.resources
+C:\Documents and Settings\Иван\Рабочий стол\маи\AIS(25.04)\AIS\obj\Debug\AIS.Form2.resources
+C:\Documents and Settings\Иван\Рабочий стол\маи\AIS(25.04)\AIS\obj\Debug\AIS.Form3.resources
+C:\Documents and Settings\Иван\Рабочий стол\маи\AIS(25.04)\AIS\obj\Debug\AIS.Form4.resources
+C:\Documents and Settings\Иван\Рабочий стол\маи\AIS(25.04)\AIS\obj\Debug\AIS.Form5.resources
+C:\Documents and Settings\Иван\Рабочий стол\маи\AIS(25.04)\AIS\obj\Debug\AIS.Properties.Resources.resources
+C:\Documents and Settings\Иван\Рабочий стол\маи\AIS(25.04)\AIS\obj\Debug\AIS.csproj.GenerateResource.Cache
+C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\AIS\bin\Debug\AIS.exe.config
+C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\AIS.exe
+C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\AIS.pdb
+C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\AIS\bin\Debug\AIS.exe
+C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\AIS\bin\Debug\AIS.pdb
+C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\AIS.Form1.resources
+C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\AIS.Form2.resources
+C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\AIS.Form3.resources
+C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\AIS.Form4.resources
+C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\AIS.Form5.resources
+C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\AIS.Properties.Resources.resources
+C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Иван\Рабочий стол\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\GenerateResource.write.1.tlog
+J:\маи\аспирантура\программы\AIS(25.04)\AIS\bin\Debug\AIS.exe.config
+J:\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\AIS.exe
+J:\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\AIS.pdb
+J:\маи\аспирантура\программы\AIS(25.04)\AIS\bin\Debug\AIS.exe
+J:\маи\аспирантура\программы\AIS(25.04)\AIS\bin\Debug\AIS.pdb
+J:\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\ResolveAssemblyReference.cache
+J:\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\AIS.Form1.resources
+J:\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\AIS.Form2.resources
+J:\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\AIS.Form3.resources
+J:\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\AIS.Form4.resources
+J:\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\AIS.Form5.resources
+J:\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\AIS.Properties.Resources.resources
+J:\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\GenerateResource.read.1.tlog
+J:\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\GenerateResource.write.1.tlog
+G:\маи\аспирантура\программы\AIS(25.04)\AIS\bin\Debug\AIS.exe.config
+G:\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\AIS.exe
+G:\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\AIS.pdb
+G:\маи\аспирантура\программы\AIS(25.04)\AIS\bin\Debug\AIS.exe
+G:\маи\аспирантура\программы\AIS(25.04)\AIS\bin\Debug\AIS.pdb
+G:\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\ResolveAssemblyReference.cache
+G:\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\AIS.Form1.resources
+G:\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\AIS.Form2.resources
+G:\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\AIS.Form3.resources
+G:\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\AIS.Form4.resources
+G:\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\AIS.Form5.resources
+G:\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\AIS.Properties.Resources.resources
+G:\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\GenerateResource.read.1.tlog
+G:\маи\аспирантура\программы\AIS(25.04)\AIS\obj\Debug\GenerateResource.write.1.tlog
+J:\маи\аспирантура\программы\AIS(25.04) - копия\AIS\bin\Debug\AIS.exe.config
+J:\маи\аспирантура\программы\AIS(25.04) - копия\AIS\obj\Debug\AIS.exe
+J:\маи\аспирантура\программы\AIS(25.04) - копия\AIS\obj\Debug\AIS.pdb
+J:\маи\аспирантура\программы\AIS(25.04) - копия\AIS\obj\Debug\ResolveAssemblyReference.cache
+J:\маи\аспирантура\программы\AIS(25.04) - копия\AIS\obj\Debug\AIS.Form1.resources
+J:\маи\аспирантура\программы\AIS(25.04) - копия\AIS\obj\Debug\AIS.Form2.resources
+J:\маи\аспирантура\программы\AIS(25.04) - копия\AIS\obj\Debug\AIS.Form3.resources
+J:\маи\аспирантура\программы\AIS(25.04) - копия\AIS\obj\Debug\AIS.Form4.resources
+J:\маи\аспирантура\программы\AIS(25.04) - копия\AIS\obj\Debug\AIS.Form5.resources
+J:\маи\аспирантура\программы\AIS(25.04) - копия\AIS\obj\Debug\AIS.Properties.Resources.resources
+J:\маи\аспирантура\программы\AIS(25.04) - копия\AIS\obj\Debug\GenerateResource.read.1.tlog
+J:\маи\аспирантура\программы\AIS(25.04) - копия\AIS\obj\Debug\GenerateResource.write.1.tlog
+G:\маи\аспирантура\программы\AIS(25.04) - копия\AIS\bin\Debug\AIS.exe.config
+G:\маи\аспирантура\программы\AIS(25.04) - копия\AIS\obj\Debug\AIS.exe
+G:\маи\аспирантура\программы\AIS(25.04) - копия\AIS\obj\Debug\ResolveAssemblyReference.cache
+G:\маи\аспирантура\программы\AIS(25.04) - копия\AIS\obj\Debug\AIS.Form1.resources
+G:\маи\аспирантура\программы\AIS(25.04) - копия\AIS\obj\Debug\AIS.Form2.resources
+G:\маи\аспирантура\программы\AIS(25.04) - копия\AIS\obj\Debug\AIS.Form3.resources
+G:\маи\аспирантура\программы\AIS(25.04) - копия\AIS\obj\Debug\AIS.Form4.resources
+G:\маи\аспирантура\программы\AIS(25.04) - копия\AIS\obj\Debug\AIS.Form5.resources
+G:\маи\аспирантура\программы\AIS(25.04) - копия\AIS\obj\Debug\AIS.Properties.Resources.resources
+G:\маи\аспирантура\программы\AIS(25.04) - копия\AIS\obj\Debug\GenerateResource.read.1.tlog
+G:\маи\аспирантура\программы\AIS(25.04) - копия\AIS\obj\Debug\GenerateResource.write.1.tlog
+G:\маи\аспирантура\программы\AIS(25.04) - копия\AIS\bin\Debug\AIS.exe
+G:\маи\аспирантура\программы\AIS(25.04) - копия\AIS\bin\Debug\AIS.pdb
+G:\маи\аспирантура\программы\AIS(25.04) - копия\AIS\obj\Debug\AIS.pdb
+C:\Users\Admin\Desktop\AIS(18.10.12)\AIS\bin\Debug\AIS.exe.config
+C:\Users\Admin\Desktop\AIS(18.10.12)\AIS\bin\Debug\AIS.exe
+C:\Users\Admin\Desktop\AIS(18.10.12)\AIS\bin\Debug\AIS.pdb
+C:\Users\Admin\Desktop\AIS(18.10.12)\AIS\obj\Debug\AIS.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\AIS(18.10.12)\AIS\obj\Debug\AIS.Properties.Resources.resources
+C:\Users\Admin\Desktop\AIS(18.10.12)\AIS\obj\Debug\AIS.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\AIS(18.10.12)\AIS\obj\Debug\AIS.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\AIS(18.10.12)\AIS\obj\Debug\AIS.exe
+C:\Users\Admin\Desktop\AIS(18.10.12)\AIS\obj\Debug\AIS.pdb
+C:\Users\Admin\Desktop\AIS(18.10.12)\AIS\obj\Debug\AIS.FormMain.resources
+C:\Users\Admin\Desktop\AIS(18.10.12)\AIS\obj\Debug\AIS.FormStepByStep.resources
+C:\Users\Admin\Desktop\AIS(18.10.12)\AIS\obj\Debug\AIS.FormHelp.resources
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\bin\Debug\AIS.exe.config
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\bin\Debug\AIS.exe
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\bin\Debug\AIS.pdb
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Debug\AIS.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Debug\AIS.FormHelp.resources
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Debug\AIS.FormStepByStep.resources
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Debug\AIS.FormMain.resources
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Debug\AIS.Properties.Resources.resources
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Debug\AIS.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Debug\AIS.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Debug\AIS.exe
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Debug\AIS.pdb
