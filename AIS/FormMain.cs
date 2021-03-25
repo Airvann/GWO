@@ -22,6 +22,7 @@ namespace AIS
         private double[,] showobl = new double[2, 2];
         private bool flag = false;
         private bool flag2 = false;
+        private double exact = 0;
 
         public FormMain()
         {
@@ -98,6 +99,7 @@ namespace AIS
                 dataGridView1.Rows[0].Cells[2].Value = "500";
                 dataGridView1.Rows[1].Cells[1].Value = "-500";
                 dataGridView1.Rows[1].Cells[2].Value = "500";
+                exact = 837.9658;
 
                 Ar[0] = -200;
                 Ar[1] = -1;
@@ -113,6 +115,7 @@ namespace AIS
                 dataGridView1.Rows[0].Cells[2].Value = "2";
                 dataGridView1.Rows[1].Cells[1].Value = "-2";
                 dataGridView1.Rows[1].Cells[2].Value = "2";
+                exact = 4.253888;
 
                 Ar[0] = 0;
                 Ar[1] = 1;
@@ -129,6 +132,7 @@ namespace AIS
                 dataGridView1.Rows[0].Cells[2].Value = "2";
                 dataGridView1.Rows[1].Cells[1].Value = "-2";
                 dataGridView1.Rows[1].Cells[2].Value = "2";
+                exact = 1;
 
                 Ar[0] = 0.2F;
                 Ar[1] = 0.45F;
@@ -145,6 +149,7 @@ namespace AIS
                 dataGridView1.Rows[0].Cells[2].Value = "10";
                 dataGridView1.Rows[1].Cells[1].Value = "-10";
                 dataGridView1.Rows[1].Cells[2].Value = "10";
+                exact = 1;
 
                 Ar[0] = 0.2F;
                 Ar[1] = 0.4F;
@@ -161,6 +166,7 @@ namespace AIS
                 dataGridView1.Rows[0].Cells[2].Value = "5";
                 dataGridView1.Rows[1].Cells[1].Value = "-5";
                 dataGridView1.Rows[1].Cells[2].Value = "5";
+                exact = 20;
 
                 Ar[0] = -20F;
                 Ar[1] = -10F;
@@ -177,6 +183,7 @@ namespace AIS
                 dataGridView1.Rows[0].Cells[2].Value = "10";
                 dataGridView1.Rows[1].Cells[1].Value = "-10";
                 dataGridView1.Rows[1].Cells[2].Value = "10";
+                exact = 0;
 
                 Ar[0] = 4F;
                 Ar[1] = 7F;
@@ -192,6 +199,7 @@ namespace AIS
                 dataGridView1.Rows[0].Cells[2].Value = "5";
                 dataGridView1.Rows[1].Cells[1].Value = "-5";
                 dataGridView1.Rows[1].Cells[2].Value = "5";
+                exact = 14.060606;
 
                 Ar[0] = 2F;
                 Ar[1] = 8F;
@@ -207,6 +215,7 @@ namespace AIS
                 dataGridView1.Rows[0].Cells[2].Value = "5";
                 dataGridView1.Rows[1].Cells[1].Value = "-5";
                 dataGridView1.Rows[1].Cells[2].Value = "5";
+                exact = 1;
 
                 Ar[0] = 0.1F;
                 Ar[1] = 0.15F;
@@ -222,6 +231,7 @@ namespace AIS
                 dataGridView1.Rows[0].Cells[2].Value = "3";
                 dataGridView1.Rows[1].Cells[1].Value = "-1";
                 dataGridView1.Rows[1].Cells[2].Value = "5";
+                exact = 0;
 
                 Ar[0] = -350F;
                 Ar[1] = -180F;
@@ -237,6 +247,7 @@ namespace AIS
                 dataGridView1.Rows[0].Cells[2].Value = "5";
                 dataGridView1.Rows[1].Cells[1].Value = "-5";
                 dataGridView1.Rows[1].Cells[2].Value = "5";
+                exact = 0;
 
                 Ar[0] = -7F;
                 Ar[1] = -4F;
@@ -465,7 +476,7 @@ namespace AIS
                 obl[1, 1] = Convert.ToDouble(dataGridView1.Rows[1].Cells[2].Value);
                 population = Convert.ToInt32(dataGridView2.Rows[0].Cells[1].Value);
                 MaxIteration = Convert.ToInt32(dataGridView2.Rows[1].Cells[1].Value);
-                FormStepByStep form = new FormStepByStep(comboBox1.SelectedIndex, obl, (int)population, MaxIteration)
+                FormStepByStep form = new FormStepByStep(comboBox1.SelectedIndex, obl, population, MaxIteration, exact)
                 {
                     flines = flines,
                     showobl = showobl,

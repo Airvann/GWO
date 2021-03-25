@@ -35,8 +35,11 @@ namespace AIS
         public Wolf beta = new Wolf();
         public Wolf delta = new Wolf();
 
-        public double averageFitness = 0;
-        
+        //Массив средней приспособленности
+        public List<double> averageFitness = new List<double>();
+
+        //Массив лучшей приспособленности
+        public List<double> bestFitness = new List<double>();
         //Параметр а
         private double a;
         private Vector A = new Vector();
@@ -145,6 +148,10 @@ namespace AIS
             for (int k = 0; k < MaxCount; k++)
             {
                 Selection();
+
+                averageFitness.Add(AverageFitness());
+                bestFitness.Add(alfa.fitness);
+                
                 NewPackGeneration();
                 currentIteration++;
             }
@@ -217,7 +224,9 @@ namespace AIS
             double sum = 0;
             for (int i = 0; i < population; i++)
                 sum += individuals[i].fitness;
-            return (sum / population);
+            double fitness = (sum / population);
+            averageFitness.Add(fitness);
+            return fitness;
         }
     }
 }
