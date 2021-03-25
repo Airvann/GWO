@@ -169,7 +169,6 @@ namespace AIS
             float a = 30;
             float k = 1;
 
-
             List<PointF> points = new List<PointF>();
             Pen p1 = new Pen(Color.PaleGreen, 1);
             Pen p2 = new Pen(Color.GreenYellow, 1);
@@ -203,7 +202,7 @@ namespace AIS
             double a7 = Ar[3];//2
             double a9 = Ar[4];//1
 
-            double a10 = Ar[5];//6
+            double a10 = Ar[5];//6  
             double a11 = Ar[6];//7
             double a12 = Ar[7];//8
 
@@ -446,7 +445,6 @@ namespace AIS
                 
                 dataGridViewIterationInfo.Rows[3].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[0]:F2}   {algst.alfa.coords.vector[1]:F2}");
                 dataGridViewIterationInfo.Rows[4].Cells[1].Value = String.Format($"{algst.alfa.fitness:F2}");
-
 
                 pictureBox1.Refresh();
                 dataGridViewIterationInfo.Refresh();

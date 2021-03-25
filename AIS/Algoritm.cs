@@ -58,8 +58,8 @@ namespace AIS
                 double y = rand.NextDouble();
 
                 //TODO: надо бы переписать
-                x = (Math.Abs(D[0, 0]) + Math.Abs(D[1, 0])) * x - Math.Abs(D[0, 0]);
-                y = (Math.Abs(D[0, 1]) + Math.Abs(D[1, 1])) * y - Math.Abs(D[0, 1]);
+                x = (Math.Abs(D[0, 0]) + Math.Abs(D[0, 1])) * x - Math.Abs(D[0, 0]);
+                y = (Math.Abs(D[1, 0]) + Math.Abs(D[1, 1])) * y - Math.Abs(D[1, 0]);
 
                 Wolf wolf = new Wolf(x, y, function(x, y, f));
                 individuals.Add(wolf);
