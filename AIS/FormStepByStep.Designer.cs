@@ -36,30 +36,30 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStepByStep));
             this.label1 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.buttonMove = new System.Windows.Forms.Button();
+            this.buttonBest = new System.Windows.Forms.Button();
+            this.buttonEndVerify = new System.Windows.Forms.Button();
+            this.buttonEnd = new System.Windows.Forms.Button();
+            this.buttonStart = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewAnswer = new System.Windows.Forms.DataGridView();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonAnswer = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.dataGridViewIterationInfo = new System.Windows.Forms.DataGridView();
+            this.pictureBoxDiagramm = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBoxGraph = new System.Windows.Forms.PictureBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAnswer)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIterationInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDiagramm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGraph)).BeginInit();
             this.SuspendLayout();
@@ -74,76 +74,73 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Графическое изображение популяции и функции ";
             // 
-            // button5
+            // buttonMove
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(216, 137);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(135, 75);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "Найти новые положения волков в стае";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.buttonMove.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonMove.Location = new System.Drawing.Point(216, 137);
+            this.buttonMove.Name = "buttonMove";
+            this.buttonMove.Size = new System.Drawing.Size(135, 75);
+            this.buttonMove.TabIndex = 10;
+            this.buttonMove.Text = "Найти новые положения волков в стае";
+            this.buttonMove.UseVisualStyleBackColor = true;
+            this.buttonMove.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button7
+            // buttonBest
             // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button7.Location = new System.Drawing.Point(25, 137);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(135, 75);
-            this.button7.TabIndex = 12;
-            this.button7.Text = "Найти трех волков-лидеров в популяции";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-
+            this.buttonBest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonBest.Location = new System.Drawing.Point(25, 137);
+            this.buttonBest.Name = "buttonBest";
+            this.buttonBest.Size = new System.Drawing.Size(135, 75);
+            this.buttonBest.TabIndex = 12;
+            this.buttonBest.Text = "Найти трех волков-лидеров в популяции";
+            this.buttonBest.UseVisualStyleBackColor = true;
+            this.buttonBest.Click += new System.EventHandler(this.button7_Click);
             // 
-            // button10
+            // buttonEndVerify
             // 
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button10.Location = new System.Drawing.Point(141, 367);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(135, 75);
-            this.button10.TabIndex = 15;
-            this.button10.Text = "Проверка условия заверщения локального поиска";
-            this.button10.UseVisualStyleBackColor = true;
-
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-
+            this.buttonEndVerify.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonEndVerify.Location = new System.Drawing.Point(141, 367);
+            this.buttonEndVerify.Name = "buttonEndVerify";
+            this.buttonEndVerify.Size = new System.Drawing.Size(135, 75);
+            this.buttonEndVerify.TabIndex = 15;
+            this.buttonEndVerify.Text = "Проверка условия заверщения локального поиска";
+            this.buttonEndVerify.UseVisualStyleBackColor = true;
+            this.buttonEndVerify.Click += new System.EventHandler(this.button10_Click);
             // 
-            // button12
+            // buttonEnd
             // 
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button12.Location = new System.Drawing.Point(141, 507);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(135, 75);
-            this.button12.TabIndex = 17;
-            this.button12.Text = "Выбор наилучшего решения";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
+            this.buttonEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonEnd.Location = new System.Drawing.Point(141, 507);
+            this.buttonEnd.Name = "buttonEnd";
+            this.buttonEnd.Size = new System.Drawing.Size(135, 75);
+            this.buttonEnd.TabIndex = 17;
+            this.buttonEnd.Text = "Выбор наилучшего решения";
+            this.buttonEnd.UseVisualStyleBackColor = true;
+            this.buttonEnd.Click += new System.EventHandler(this.button12_Click);
             // 
-            // button4
+            // buttonStart
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(25, 19);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(135, 75);
-            this.button4.TabIndex = 18;
-            this.button4.Text = "Создание начальной популяции";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.buttonStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonStart.Location = new System.Drawing.Point(25, 19);
+            this.buttonStart.Name = "buttonStart";
+            this.buttonStart.Size = new System.Drawing.Size(135, 75);
+            this.buttonStart.TabIndex = 18;
+            this.buttonStart.Text = "Создание начальной популяции";
+            this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.button4_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView2);
+            this.groupBox1.Controls.Add(this.dataGridViewAnswer);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(835, 531);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(272, 156);
+            this.groupBox1.Size = new System.Drawing.Size(346, 156);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ответ";
             // 
-            // dataGridView2
+            // dataGridViewAnswer
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -152,9 +149,9 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewAnswer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewAnswer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAnswer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column3,
             this.Column4});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -164,13 +161,13 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView2.Enabled = false;
-            this.dataGridView2.Location = new System.Drawing.Point(14, 30);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.Size = new System.Drawing.Size(252, 111);
-            this.dataGridView2.TabIndex = 0;
+            this.dataGridViewAnswer.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewAnswer.Enabled = false;
+            this.dataGridViewAnswer.Location = new System.Drawing.Point(14, 30);
+            this.dataGridViewAnswer.Name = "dataGridViewAnswer";
+            this.dataGridViewAnswer.RowHeadersVisible = false;
+            this.dataGridViewAnswer.Size = new System.Drawing.Size(320, 111);
+            this.dataGridViewAnswer.TabIndex = 0;
             // 
             // Column3
             // 
@@ -212,7 +209,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dataGridViewIterationInfo);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox2.Location = new System.Drawing.Point(403, 417);
             this.groupBox2.Name = "groupBox2";
@@ -221,7 +218,7 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Информация о текущей популяции";
             // 
-            // dataGridView1
+            // dataGridViewIterationInfo
             // 
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
@@ -230,9 +227,9 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewIterationInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewIterationInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewIterationInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -242,40 +239,24 @@
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView1.Enabled = false;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 33);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(402, 221);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGridViewIterationInfo.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewIterationInfo.Enabled = false;
+            this.dataGridViewIterationInfo.Location = new System.Drawing.Point(13, 33);
+            this.dataGridViewIterationInfo.Name = "dataGridViewIterationInfo";
+            this.dataGridViewIterationInfo.RowHeadersVisible = false;
+            this.dataGridViewIterationInfo.Size = new System.Drawing.Size(402, 221);
+            this.dataGridViewIterationInfo.TabIndex = 1;
+            this.dataGridViewIterationInfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Column1
+            // pictureBoxDiagramm
             // 
-            this.Column1.Frozen = true;
-            this.Column1.HeaderText = "Характеристика";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 250;
-            // 
-            // Column2
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column2.Frozen = true;
-            this.Column2.HeaderText = "Значение";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column2.Width = 150;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(25, 19);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(363, 581);
-            this.pictureBox3.TabIndex = 8;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox3_Paint);
+            this.pictureBoxDiagramm.Location = new System.Drawing.Point(25, 19);
+            this.pictureBoxDiagramm.Name = "pictureBoxDiagramm";
+            this.pictureBoxDiagramm.Size = new System.Drawing.Size(363, 581);
+            this.pictureBoxDiagramm.TabIndex = 8;
+            this.pictureBoxDiagramm.TabStop = false;
+            this.pictureBoxDiagramm.Click += new System.EventHandler(this.pictureBoxDiagramm_Click);
+            this.pictureBoxDiagramm.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox3_Paint);
             // 
             // pictureBox1
             // 
@@ -309,6 +290,24 @@
             this.pictureBoxGraph.TabStop = false;
             this.pictureBoxGraph.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxGraph_Paint);
             // 
+            // Column1
+            // 
+            this.Column1.Frozen = true;
+            this.Column1.HeaderText = "Характеристика";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 280;
+            // 
+            // Column2
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column2.Frozen = true;
+            this.Column2.HeaderText = "Значение";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column2.Width = 120;
+            // 
             // FormStepByStep
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -320,22 +319,22 @@
             this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.buttonAnswer);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.buttonStart);
+            this.Controls.Add(this.buttonEnd);
+            this.Controls.Add(this.buttonEndVerify);
+            this.Controls.Add(this.buttonBest);
+            this.Controls.Add(this.buttonMove);
+            this.Controls.Add(this.pictureBoxDiagramm);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormStepByStep";
             this.Text = "Метод серых волков. Работа по шагам";
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAnswer)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIterationInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDiagramm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGraph)).EndInit();
             this.ResumeLayout(false);
@@ -347,23 +346,23 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.PictureBox pictureBoxDiagramm;
+        private System.Windows.Forms.Button buttonMove;
+        private System.Windows.Forms.Button buttonBest;
+        private System.Windows.Forms.Button buttonEndVerify;
+        private System.Windows.Forms.Button buttonEnd;
+        private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buttonAnswer;
         private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridView dataGridViewIterationInfo;
+        private System.Windows.Forms.DataGridView dataGridViewAnswer;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBoxGraph;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

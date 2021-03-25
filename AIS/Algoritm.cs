@@ -34,7 +34,8 @@ namespace AIS
         public Wolf alfa = new Wolf();
         public Wolf beta = new Wolf();
         public Wolf delta = new Wolf();
-        
+
+        public double averageFitness = 0;
         
         //Параметр а
         private double a;
@@ -210,6 +211,13 @@ namespace AIS
                 Cp[0] = x0; Cp[1] = y0;
             }
             return Cp;
+        }
+        public double AverageFitness()
+        {
+            double sum = 0;
+            for (int i = 0; i < population; i++)
+                sum += individuals[i].fitness;
+            return (sum / population);
         }
     }
 }

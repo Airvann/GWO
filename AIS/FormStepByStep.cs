@@ -10,7 +10,7 @@ namespace AIS
         public FormStepByStep(int z, double[,] obl, int PopulationCount, int MaxIteration)
         {
             InitializeComponent();
-            InitDataGridView1();
+            InitDataGridView();
 
             this.z = z;
             this.obl = obl;
@@ -37,20 +37,21 @@ namespace AIS
 
         int t = 0;
 
-        private void InitDataGridView1()
+        private void InitDataGridView()
         {
-            dataGridView2.RowCount = 3;
+            dataGridViewAnswer.RowCount = 3;
             //TODO: исправить названия в таблице
-            dataGridView2.Rows[0].Cells[0].Value = "x";
-            dataGridView2.Rows[1].Cells[0].Value = "y";
-            dataGridView2.Rows[2].Cells[0].Value = "f*";
+            dataGridViewAnswer.Rows[0].Cells[0].Value = "x";
+            dataGridViewAnswer.Rows[1].Cells[0].Value = "y";
+            dataGridViewAnswer.Rows[2].Cells[0].Value = "f*";
 
-            dataGridView1.RowCount = 5;
-            dataGridView1.Rows[0].Cells[0].Value = "Номер популяции:";
-            dataGridView1.Rows[1].Cells[0].Value = "Размер популяции:";
-            dataGridView1.Rows[2].Cells[0].Value = "Количество итераций:";
-            dataGridView1.Rows[3].Cells[0].Value = "Волк с лучшей приспособленностью:";
-            dataGridView1.Rows[4].Cells[0].Value = "Приспособленность лучшего волка:";
+            dataGridViewIterationInfo.RowCount = 6;
+            dataGridViewIterationInfo.Rows[0].Cells[0].Value = "Номер популяции:";
+            dataGridViewIterationInfo.Rows[1].Cells[0].Value = "Размер популяции:";
+            dataGridViewIterationInfo.Rows[2].Cells[0].Value = "Количество итераций:";
+            dataGridViewIterationInfo.Rows[3].Cells[0].Value = "Волк с лучшей приспособленностью:";
+            dataGridViewIterationInfo.Rows[4].Cells[0].Value = "Приспособленность лучшего волка:";
+            dataGridViewIterationInfo.Rows[5].Cells[0].Value = "Средняя приспособленность популяции:";
         }
 
         private void pictureBox3_Paint(object sender, PaintEventArgs e)
@@ -150,11 +151,11 @@ namespace AIS
 
                 t = 0;      // Счетчик текущей итерации
 
-                dataGridView1.Rows[0].Cells[1].Value = t;
-                dataGridView1.Rows[1].Cells[1].Value = algst.population;
-                dataGridView1.Rows[2].Cells[1].Value = algst.MaxCount;
+                dataGridViewIterationInfo.Rows[0].Cells[1].Value = t;
+                dataGridViewIterationInfo.Rows[1].Cells[1].Value = algst.population;
+                dataGridViewIterationInfo.Rows[2].Cells[1].Value = algst.MaxCount;
 
-                pictureBox3.Refresh();
+                pictureBoxDiagramm.Refresh();
                 pictureBox1.Refresh();
             }
         }
@@ -372,13 +373,15 @@ namespace AIS
                 Red[1] = false;
                 Red[2] = true;
                 algst.NewPackGeneration();
-                pictureBox3.Refresh();
+                pictureBoxDiagramm.Refresh();
                 pictureBox1.Refresh();
             }
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
+            buttonAnswer.Enabled = false;
+            buttonNext.Enabled = false;
             if (Red[4] == false) 
             {
                 //селекция
@@ -396,10 +399,11 @@ namespace AIS
                     
                 algst.Selection();
 
-                dataGridView1.Rows[3].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[0]:F2}   {algst.alfa.coords.vector[1]:F2}");
-                dataGridView1.Rows[4].Cells[1].Value = String.Format($"{algst.alfa.fitness:F2}");
-                dataGridView1.Refresh();
-                pictureBox3.Refresh();
+                dataGridViewIterationInfo.Rows[3].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[0]:F2}   {algst.alfa.coords.vector[1]:F2}");
+                dataGridViewIterationInfo.Rows[4].Cells[1].Value = String.Format($"{algst.alfa.fitness:F2}");
+                dataGridViewIterationInfo.Rows[5].Cells[1].Value = String.Format($"{algst.AverageFitness():F7}");
+                dataGridViewIterationInfo.Refresh();
+                pictureBoxDiagramm.Refresh();
                 pictureBox1.Refresh();
             }
         }
@@ -413,8 +417,8 @@ namespace AIS
                 {
                     algst.currentIteration++;
                     t++;
-                    dataGridView1.Rows[0].Cells[1].Value = t;
-                    dataGridView1.Refresh();
+                    dataGridViewIterationInfo.Rows[0].Cells[1].Value = t;
+                    dataGridViewIterationInfo.Refresh();
                     Red[3] = true;
                     Red[2] = false;
                     buttonAnswer.Enabled = true;
@@ -423,12 +427,10 @@ namespace AIS
 
                 else 
                 {
-                    buttonAnswer.Enabled = false;
-                    buttonNext.Enabled = false;
                     Red[2] = false;
                     Red[4] = true;
                 }
-                pictureBox3.Refresh();
+                pictureBoxDiagramm.Refresh();
             }
         }
         private void button12_Click(object sender, EventArgs e)
@@ -439,17 +441,17 @@ namespace AIS
                 Red[3] = false;
                 algst.Selection();
 
-                dataGridView2.Rows[0].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[0]:F2}   {algst.alfa.coords.vector[1]:F2}");
-                dataGridView2.Rows[1].Cells[1].Value = String.Format($"{algst.alfa.fitness:F2}");
+                dataGridViewAnswer.Rows[0].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[0]:F2}   {algst.alfa.coords.vector[1]:F2}");
+                dataGridViewAnswer.Rows[1].Cells[1].Value = String.Format($"{algst.alfa.fitness:F2}");
                 
-                dataGridView1.Rows[3].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[0]:F2}   {algst.alfa.coords.vector[1]:F2}");
-                dataGridView1.Rows[4].Cells[1].Value = String.Format($"{algst.alfa.fitness:F2}");
+                dataGridViewIterationInfo.Rows[3].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[0]:F2}   {algst.alfa.coords.vector[1]:F2}");
+                dataGridViewIterationInfo.Rows[4].Cells[1].Value = String.Format($"{algst.alfa.fitness:F2}");
 
 
                 pictureBox1.Refresh();
-                dataGridView1.Refresh();
-                dataGridView2.Refresh();
-                pictureBox3.Refresh();
+                dataGridViewIterationInfo.Refresh();
+                dataGridViewAnswer.Refresh();
+                pictureBoxDiagramm.Refresh();
                 flag = false; 
             }
         }
@@ -468,24 +470,22 @@ namespace AIS
 
                     algst.currentIteration++;
 
-                    dataGridView2.Rows[0].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[0]:F2}   {algst.alfa.coords.vector[1]:F2}");
-                    dataGridView2.Rows[1].Cells[1].Value = String.Format($"{algst.alfa.fitness:F2}");
-
-                    dataGridView1.Rows[0].Cells[1].Value = t;
-                    dataGridView1.Rows[3].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[0]:F2}   {algst.alfa.coords.vector[1]:F2}");
-                    dataGridView1.Rows[4].Cells[1].Value = String.Format($"{algst.alfa.fitness:F2}");
+                    dataGridViewIterationInfo.Rows[0].Cells[1].Value = t;
+                    dataGridViewIterationInfo.Rows[3].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[0]:F2}   {algst.alfa.coords.vector[1]:F2}");
+                    dataGridViewIterationInfo.Rows[4].Cells[1].Value = String.Format($"{algst.alfa.fitness:F2}");
+                    dataGridViewIterationInfo.Rows[5].Cells[1].Value = String.Format($"{algst.AverageFitness():F7}");
 
                     pictureBox1.Refresh();
-                    pictureBox3.Refresh();
-                    dataGridView1.Refresh();
-                    dataGridView2.Refresh();
+                    pictureBoxDiagramm.Refresh();
+                    dataGridViewIterationInfo.Refresh();
+                    dataGridViewAnswer.Refresh();
                 }
                 else
                 {
                     Red[2] = false;
                     Red[4] = true;
                 }
-                pictureBox3.Refresh();
+                pictureBoxDiagramm.Refresh();
             }
         }
 
@@ -535,20 +535,30 @@ namespace AIS
 
                 algst.Selection();
 
-                dataGridView2.Rows[0].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[0]:F2}");
-                dataGridView2.Rows[1].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[1]:F2}");
-                dataGridView2.Rows[2].Cells[1].Value = String.Format($"{algst.alfa.fitness:F2}");
+                dataGridViewAnswer.Rows[0].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[0]:F2}");
+                dataGridViewAnswer.Rows[1].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[1]:F2}");
+                dataGridViewAnswer.Rows[2].Cells[1].Value = String.Format($"{algst.alfa.fitness:F2}");
 
-                dataGridView1.Rows[3].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[0]:F2}   {algst.alfa.coords.vector[1]:F2}");
-                dataGridView1.Rows[4].Cells[1].Value = String.Format($"{algst.alfa.fitness:F2}");
+                dataGridViewIterationInfo.Rows[3].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[0]:F2}   {algst.alfa.coords.vector[1]:F2}");
+                dataGridViewIterationInfo.Rows[4].Cells[1].Value = String.Format($"{algst.alfa.fitness:F2}");
 
 
                 pictureBox1.Refresh();
-                dataGridView1.Refresh();
-                dataGridView2.Refresh();
-                pictureBox3.Refresh();
+                dataGridViewIterationInfo.Refresh();
+                dataGridViewAnswer.Refresh();
+                pictureBoxDiagramm.Refresh();
                 flag = false;
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void pictureBoxDiagramm_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
