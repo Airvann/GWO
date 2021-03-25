@@ -11,9 +11,7 @@ namespace AIS
 
     public class Algoritm
     {
-
         public Params param;
-        //Функция для обработки
 
         //Рандом
         private Random rand = new Random();
@@ -21,17 +19,24 @@ namespace AIS
         //Размер популяции волков
         public int population;
 
+        //Номер выбранной функции
         public int f;
+
+        //область определения
         public double[,] D;
 
         //Максимальное число итераций
         public int MaxCount { get; set; }
+        
         //Текущая итерация
         public int currentIteration = 0;
+
         public Wolf alfa = new Wolf();
         public Wolf beta = new Wolf();
         public Wolf delta = new Wolf();
-
+        
+        
+        //Параметр а
         private double a;
         private Vector A = new Vector();
 
@@ -42,6 +47,8 @@ namespace AIS
 
         public Algoritm(){}
 
+
+        //Начальное формирование популяции
         public void FormingPopulation()
         {
             for (int i = 0; i < population; i++)
@@ -63,7 +70,7 @@ namespace AIS
             //Пузырьковая сортировка
             Sort(individuals);
 
-            //Выбираем наиболее приспосоленные 
+            //Выбираем наиболее приспосоленных волков (сделано так, чтобы была передача значений, а не ссылки) 
             alfa.coords.vector[0] = individuals[0].coords.vector[0];    alfa.coords.vector[1] = individuals[0].coords.vector[1];    alfa.fitness = individuals[0].fitness;
             beta.coords.vector[0] = individuals[1].coords.vector[0];    beta.coords.vector[1] = individuals[1].coords.vector[1];    beta.fitness = individuals[1].fitness;
             delta.coords.vector[0] = individuals[2].coords.vector[0];   delta.coords.vector[1] = individuals[2].coords.vector[1];   delta.fitness = individuals[2].fitness;
@@ -72,6 +79,7 @@ namespace AIS
         //Формирование новой стаи
         public void NewPackGeneration()
         {
+            //Выбор функции изменения параметра а
             if (param == Params.Quadratic)
                 a = 2 * (1 - ((currentIteration * currentIteration) / ((double)MaxCount * MaxCount)));
             else
@@ -88,7 +96,6 @@ namespace AIS
 
                 Vector D_delta = Vector.Norm(Vector.HadamardMultiply(C, delta.coords) - individuals[k].coords);
 
-                //?
                 individuals[k].coords = ((alfa.coords - Vector.HadamardMultiply(D_alfa, A)) +
                                              (beta.coords - Vector.HadamardMultiply(D_beta, A)) +
                                              (delta.coords - Vector.HadamardMultiply(D_delta, A))) / 3.0;
@@ -96,6 +103,7 @@ namespace AIS
                 double x = individuals[k].coords[0];
                 double y = individuals[k].coords[1];
 
+                //Проверка, не вышли ли мы за границы
                 if (x < D[0, 0])
                     individuals[k].coords[0] = D[0, 0];
                 if (x > D[0, 1])
@@ -109,6 +117,7 @@ namespace AIS
             }
         }
 
+        //Пузырьковая сортировка
         private void Sort(List<Wolf> list)
         {
             for (int i = 0; i < list.Count; i++)
@@ -121,7 +130,7 @@ namespace AIS
                     }
         }
 
-        //Весь алгоритм
+        //Старт алгоритма
         public Wolf StartAlg(int population, int MaxCount, double[,] D, int f, Params param)
         {
             this.param = param;
@@ -138,6 +147,7 @@ namespace AIS
                 NewPackGeneration();
                 currentIteration++;
             }
+            Selection();
             return alfa;
         }
 

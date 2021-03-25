@@ -11,6 +11,7 @@ namespace AIS
         {
             InitializeComponent();
             InitDataGridView1();
+
             this.z = z;
             this.obl = obl;
 
@@ -29,6 +30,7 @@ namespace AIS
         public double[,] showoblbase = new double[2, 2];
         public double[,] oblbase = new double[2, 2];
         public double[,] obl;
+        public int stepsCount = 5;
 
         bool flag = false;
         bool[] Red = new bool[5];
@@ -134,7 +136,7 @@ namespace AIS
             {
                 //создание начальной популяции
                 Red[0] = true;
-                for (int i = 1; i < 5; i++)
+                for (int i = 1; i < stepsCount; i++)
                     Red[i] = false;
 
                 flag = true;    //Начало работы алгоритма
