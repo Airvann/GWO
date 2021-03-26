@@ -39,11 +39,10 @@ namespace AIS
             dataGridView2.RowCount = 2;
             dataGridView2.Rows[0].Cells[0].Value = "Размер начальной популяции";
             dataGridView2.Rows[1].Cells[0].Value = "Максимальное количество итераций";
-            dataGridView2.Rows[0].Cells[1].Value = 10;              //TODO: сделать для каждой функции свою
+            dataGridView2.Rows[0].Cells[1].Value = 100;
             dataGridView2.Rows[1].Cells[1].Value = 100;
 
             dataGridView3.RowCount = 3;
-            //TODO: исправить названия в таблице
             dataGridView3.Rows[0].Cells[0].Value = "x";
             dataGridView3.Rows[1].Cells[0].Value = "y";
             dataGridView3.Rows[2].Cells[0].Value = "f*";            

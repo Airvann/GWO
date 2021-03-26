@@ -60,7 +60,6 @@ namespace AIS
                 double x = rand.NextDouble();
                 double y = rand.NextDouble();
 
-                //TODO: надо бы переписать
                 x = (Math.Abs(D[0, 0]) + Math.Abs(D[0, 1])) * x - Math.Abs(D[0, 0]);
                 y = (Math.Abs(D[1, 0]) + Math.Abs(D[1, 1])) * y - Math.Abs(D[1, 0]);
 
@@ -149,9 +148,8 @@ namespace AIS
             {
                 Selection();
 
-                averageFitness.Add(AverageFitness());
                 bestFitness.Add(alfa.fitness);
-                
+                AverageFitness();
                 NewPackGeneration();
                 currentIteration++;
             }

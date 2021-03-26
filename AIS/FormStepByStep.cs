@@ -21,9 +21,12 @@ namespace AIS
 
         private int PopulationCount;
         private int MaxIteration;
+        public double exact;
         public Algoritm algst = new Algoritm();
+
         public double[,] showobl = new double[2, 2];
         public int z;
+
         public float[] Ar = new float[8];
         public bool[] flines = new bool[8];
         public float[] A = new float[8];
@@ -31,17 +34,13 @@ namespace AIS
         public double[,] oblbase = new double[2, 2];
         public double[,] obl;
         public int stepsCount = 5;
-        public double exact = 0;
 
         bool flag = false;
         bool[] Red = new bool[5];
 
-        int t = 0;
-
         private void InitDataGridView()
         {
             dataGridViewAnswer.RowCount = 3;
-            //TODO: исправить названия в таблице
             dataGridViewAnswer.Rows[0].Cells[0].Value = "x";
             dataGridViewAnswer.Rows[1].Cells[0].Value = "y";
             dataGridViewAnswer.Rows[2].Cells[0].Value = "f*";
@@ -99,7 +98,7 @@ namespace AIS
                 e.Graphics.DrawLine(p3, 250, 389, 260, 384);
             }
 
-            //Проверка условия окончания ->  Селекиця + 
+            //Проверка условия окончания ->  Селекиця 
             e.Graphics.DrawLine(p1, 70, 390, 220, 390);
             e.Graphics.DrawLine(p1, 70, 390, 70, 155);
             e.Graphics.DrawLine(p1, 70, 195, 75, 205);
@@ -117,7 +116,7 @@ namespace AIS
             e.Graphics.DrawLine(p1, 180, 485, 185, 475);
             e.Graphics.DrawLine(p1, 179, 485, 174, 475);
 
-            //Провекра условия -> выход +
+            //Провекра условия -> Выход 
             if (Red[4] == true)
             {
                 e.Graphics.DrawLine(p3, 180, 390, 180, 500);
@@ -127,35 +126,36 @@ namespace AIS
 
             e.Graphics.DrawString("да", f1, Brushes.Black, 150, 435);
             e.Graphics.DrawString("нет", f1, Brushes.Black, 70, 400);
-
             
             e.Graphics.DrawLine(p2, 0, 580, 400, 580);
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void buttonStart_Click(object sender, EventArgs e)
         {
             if (!flag)
             {
-                //создание начальной популяции
+                //заполнение массива состояний
                 Red[0] = true;
                 for (int i = 1; i < stepsCount; i++)
                     Red[i] = false;
 
-                flag = true;    //Начало работы алгоритма
+                flag = true;                   //Начало работы алгоритма
 
-                algst = new Algoritm();
-                algst.MaxCount = MaxIteration;
-                algst.population = PopulationCount;
-                algst.f = z;
-                algst.D = obl;
+                algst = new Algoritm
+                {
+                    MaxCount = MaxIteration,
+                    population = PopulationCount,
+                    f = z,
+                    D = obl
+                };
+
                 algst.FormingPopulation();
 
-                t = 0;      // Счетчик текущей итерации
-
-                dataGridViewIterationInfo.Rows[0].Cells[1].Value = t;
+                algst.currentIteration = 0;                        // Счетчик итераций
+                dataGridViewIterationInfo.Rows[0].Cells[1].Value = algst.currentIteration;
                 dataGridViewIterationInfo.Rows[1].Cells[1].Value = algst.population;
                 dataGridViewIterationInfo.Rows[2].Cells[1].Value = algst.MaxCount;
-
+                dataGridViewIterationInfo.Refresh();
                 pictureBoxDiagramm.Refresh();
                 pictureBox1.Refresh();
             }
@@ -192,6 +192,7 @@ namespace AIS
 
             pictureBox1.BackColor = Color.White;
          
+            //TODO: ShowObl == Obl?
             double x1 = showobl[0, 0];
             double x2 = showobl[0, 1];
             double y1 = showobl[1, 0];
@@ -366,26 +367,26 @@ namespace AIS
             return Cp;
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void buttonMove_Click(object sender, EventArgs e)
         {
             if (Red[1] == true)
             {
                 Red[1] = false;
                 Red[2] = true;
                 algst.NewPackGeneration();
+
                 pictureBoxDiagramm.Refresh();
                 pictureBox1.Refresh();
-                pictureBoxGraph.Refresh();
             }
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void buttonBest_Click(object sender, EventArgs e)
         {
             buttonAnswer.Enabled = false;
             buttonNext.Enabled = false;
+
             if (Red[4] == false) 
             {
-                //селекция
                 if (Red[3] == true)
                 {
                     Red[3] = false;
@@ -398,19 +399,35 @@ namespace AIS
                     Red[1] = true;
                 }
                     
+                //селекция
                 algst.Selection();
-
                 algst.bestFitness.Add(algst.alfa.fitness);
-                dataGridViewIterationInfo.Rows[3].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[0]:F2}   {algst.alfa.coords.vector[1]:F2}");
-                dataGridViewIterationInfo.Rows[4].Cells[1].Value = String.Format($"{algst.alfa.fitness:F2}");
-                dataGridViewIterationInfo.Rows[5].Cells[1].Value = String.Format($"{algst.AverageFitness():F7}");
-                dataGridViewIterationInfo.Refresh();
+                algst.AverageFitness();
+                UpdateIterationInfo();
+
                 pictureBoxDiagramm.Refresh();
                 pictureBox1.Refresh();
+                pictureBoxGraph.Refresh();
             }
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void UpdateIterationInfo()
+        {
+
+            dataGridViewIterationInfo.Rows[3].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[0]:F2}   {algst.alfa.coords.vector[1]:F2}");
+            dataGridViewIterationInfo.Rows[4].Cells[1].Value = String.Format($"{algst.alfa.fitness:F2}");
+            dataGridViewIterationInfo.Rows[5].Cells[1].Value = String.Format($"{algst.averageFitness[algst.averageFitness.Count - 1]:F7}");
+            dataGridViewIterationInfo.Refresh();
+        }
+
+        private void UpdateAnswer()
+        {
+            dataGridViewAnswer.Rows[0].Cells[1].Value = string.Format($"{algst.alfa.coords[0]:F8}");
+            dataGridViewAnswer.Rows[1].Cells[1].Value = string.Format($"{algst.alfa.coords[1]:F8}");
+            dataGridViewAnswer.Rows[2].Cells[1].Value = string.Format($"{algst.alfa.fitness:F8}");
+        }
+
+        private void buttonEndVerify_Click(object sender, EventArgs e)
         {
             //условия глобального поиска
             if (Red[2] == true)
@@ -418,9 +435,7 @@ namespace AIS
                 if (algst.currentIteration < algst.MaxCount)
                 {
                     algst.currentIteration++;
-                    t++;
-                    dataGridViewIterationInfo.Rows[0].Cells[1].Value = t;
-                    dataGridViewIterationInfo.Refresh();
+                    UpdateIterationInfo();
                     Red[3] = true;
                     Red[2] = false;
                     buttonAnswer.Enabled = true;
@@ -435,7 +450,7 @@ namespace AIS
                 pictureBoxDiagramm.Refresh();
             }
         }
-        private void button12_Click(object sender, EventArgs e)
+        private void buttonEnd_Click(object sender, EventArgs e)
         {
             //ответ
             if (Red[4] == true)
@@ -443,23 +458,17 @@ namespace AIS
                 Red[3] = false;
                 algst.Selection();
 
-                //TODO:!
-                dataGridViewAnswer.Rows[0].Cells[1].Value = string.Format($"{algst.alfa.coords[0]:F8}");
-                dataGridViewAnswer.Rows[1].Cells[1].Value = string.Format($"{algst.alfa.coords[1]:F8}");
-                dataGridViewAnswer.Rows[2].Cells[1].Value = string.Format($"{algst.alfa.fitness:F8}");
-                
-                dataGridViewIterationInfo.Rows[3].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[0]:F2}   {algst.alfa.coords.vector[1]:F2}");
-                dataGridViewIterationInfo.Rows[4].Cells[1].Value = String.Format($"{algst.alfa.fitness:F2}");
+                UpdateAnswer();
+                UpdateIterationInfo();
 
-                pictureBox1.Refresh();
-                dataGridViewIterationInfo.Refresh();
+                pictureBox1.Refresh();               
                 dataGridViewAnswer.Refresh();
                 pictureBoxDiagramm.Refresh();
                 flag = false; 
             }
         }
 
-        private void button14_Click(object sender, EventArgs e)
+        private void buttonNext_Click(object sender, EventArgs e)
         {
             if (Red[3] == true)
             {
@@ -468,30 +477,23 @@ namespace AIS
                 {
                     algst.Selection();
                     algst.NewPackGeneration();
-                    algst.NewPackGeneration();
-                    t++;
 
+                    algst.AverageFitness();
+                    algst.bestFitness.Add(algst.alfa.fitness);
                     algst.currentIteration++;
 
-                    dataGridViewIterationInfo.Rows[0].Cells[1].Value = t;
-                    dataGridViewIterationInfo.Rows[3].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[0]:F2}   {algst.alfa.coords.vector[1]:F2}");
-                    dataGridViewIterationInfo.Rows[4].Cells[1].Value = String.Format($"{algst.alfa.fitness:F2}");
-                    dataGridViewIterationInfo.Rows[5].Cells[1].Value = String.Format($"{algst.AverageFitness():F7}");
-
-                    pictureBox1.Refresh();
-                    pictureBoxDiagramm.Refresh();
-                    dataGridViewIterationInfo.Refresh();
-                    dataGridViewAnswer.Refresh();
+                    UpdateIterationInfo();
                 }
                 else
                 {
                     Red[2] = false;
                     Red[4] = true;
                 }
+                pictureBox1.Refresh();
+                pictureBoxGraph.Refresh();
                 pictureBoxDiagramm.Refresh();
             }
         }
-        //TODO: добавить в функции ожидаемое решение exact
         private void pictureBoxGraph_Paint(object sender, PaintEventArgs e)
         {
             if (flag == true)
@@ -512,7 +514,7 @@ namespace AIS
                 e.Graphics.DrawLine(p1, w - 5, y0, w - 15, y0 + 5);
                 e.Graphics.DrawLine(p1, w - 5, y0, w - 15, y0 - 5);
 
-                float mx = (w - 60) / (t + 5);//(algst.MaxCount);
+                float mx = (w - 60) / (algst.currentIteration + 5);//(algst.MaxCount);
                 float mh = 0;
                 try { mh = (float)((h - 60) / ((1.1 * exact - Math.Min(0, algst.averageFitness[0])))); }
                 catch { mh = (float)((h - 60) / (1.1 * exact)); }
@@ -520,13 +522,13 @@ namespace AIS
                 double a = 1;
 
 
-                if (t < 31) a = 2;
-                else if (t < 101) a = 5;
-                else if (t < 151) a = 10;
-                else if (t < 301) a = 20;
-                else if (t < 501) a = 50;
-                else if (t < 1001) a = 100;
-                else if (t < 2001) a = 200;
+                if (algst.currentIteration < 31) a = 2;
+                else if (algst.currentIteration < 101) a = 5;
+                else if (algst.currentIteration < 151) a = 10;
+                else if (algst.currentIteration < 301) a = 20;
+                else if (algst.currentIteration < 501) a = 50;
+                else if (algst.currentIteration < 1001) a = 100;
+                else if (algst.currentIteration < 2001) a = 200;
                 else a = 1000;
 
                 double b = 0;
@@ -569,6 +571,8 @@ namespace AIS
                     e.Graphics.FillEllipse(Brushes.Green, (float)(x0), (float)(y0 - 1 - mh * (algst.averageFitness[0] - Math.Min(0, algst.averageFitness[0]))), 3, 3);
                     e.Graphics.FillEllipse(Brushes.Blue, (float)(x0), (float)(y0 - 1 - mh * (algst.alfa.coords[0] - Math.Min(0, algst.averageFitness[0]))), 3, 3);
 
+
+                    if (algst.bestFitness.Count >= 2 && algst.averageFitness.Count >= 2)
                     for (int i = 0; i < algst.averageFitness.Count - 1; i++)
                     {
 
@@ -593,46 +597,34 @@ namespace AIS
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonAnswer_Click(object sender, EventArgs e)
         {
             if (Red[3] == true) 
             {
                 Red[3] = false;
-                for (int i = 0; t < MaxIteration; i++)
+                for (int i = 0; algst.currentIteration < MaxIteration; i++)
                 {
                     algst.Selection();
                     algst.NewPackGeneration();
-                    t++;
+
+                    algst.bestFitness.Add(algst.alfa.fitness);
+                    algst.AverageFitness();
+
                     algst.currentIteration++;
                 }
 
                 algst.Selection();
 
-                dataGridViewAnswer.Rows[0].Cells[1].Value = string.Format($"{algst.alfa.coords[0]:F8}");
-                dataGridViewAnswer.Rows[1].Cells[1].Value = string.Format($"{algst.alfa.coords[1]:F8}");
-                dataGridViewAnswer.Rows[2].Cells[1].Value = string.Format($"{algst.alfa.fitness:F8}");
-
-                dataGridViewIterationInfo.Rows[3].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[0]:F2}   {algst.alfa.coords.vector[1]:F2}");
-                dataGridViewIterationInfo.Rows[4].Cells[1].Value = String.Format($"{algst.alfa.fitness:F2}");
-                dataGridViewIterationInfo.Rows[5].Cells[1].Value = String.Format($"{algst.AverageFitness():F8}");
-
+                UpdateAnswer();
+                UpdateIterationInfo();
 
                 pictureBox1.Refresh();
                 dataGridViewIterationInfo.Refresh();
                 dataGridViewAnswer.Refresh();
+                pictureBoxGraph.Refresh();
                 pictureBoxDiagramm.Refresh();
                 flag = false;
             }
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void pictureBoxDiagramm_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

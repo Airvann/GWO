@@ -30,10 +30,10 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStepByStep));
             this.label1 = new System.Windows.Forms.Label();
             this.buttonMove = new System.Windows.Forms.Button();
@@ -43,6 +43,8 @@
             this.buttonStart = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridViewAnswer = new System.Windows.Forms.DataGridView();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonAnswer = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -53,8 +55,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBoxGraph = new System.Windows.Forms.PictureBox();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAnswer)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -83,7 +83,7 @@
             this.buttonMove.TabIndex = 10;
             this.buttonMove.Text = "Найти новые положения волков в стае";
             this.buttonMove.UseVisualStyleBackColor = true;
-            this.buttonMove.Click += new System.EventHandler(this.button5_Click);
+            this.buttonMove.Click += new System.EventHandler(this.buttonMove_Click);
             // 
             // buttonBest
             // 
@@ -94,7 +94,7 @@
             this.buttonBest.TabIndex = 12;
             this.buttonBest.Text = "Найти трех волков-лидеров в популяции";
             this.buttonBest.UseVisualStyleBackColor = true;
-            this.buttonBest.Click += new System.EventHandler(this.button7_Click);
+            this.buttonBest.Click += new System.EventHandler(this.buttonBest_Click);
             // 
             // buttonEndVerify
             // 
@@ -105,7 +105,7 @@
             this.buttonEndVerify.TabIndex = 15;
             this.buttonEndVerify.Text = "Проверка условия заверщения локального поиска";
             this.buttonEndVerify.UseVisualStyleBackColor = true;
-            this.buttonEndVerify.Click += new System.EventHandler(this.button10_Click);
+            this.buttonEndVerify.Click += new System.EventHandler(this.buttonEndVerify_Click);
             // 
             // buttonEnd
             // 
@@ -116,7 +116,7 @@
             this.buttonEnd.TabIndex = 17;
             this.buttonEnd.Text = "Выбор наилучшего решения";
             this.buttonEnd.UseVisualStyleBackColor = true;
-            this.buttonEnd.Click += new System.EventHandler(this.button12_Click);
+            this.buttonEnd.Click += new System.EventHandler(this.buttonEnd_Click);
             // 
             // buttonStart
             // 
@@ -127,7 +127,7 @@
             this.buttonStart.TabIndex = 18;
             this.buttonStart.Text = "Создание начальной популяции";
             this.buttonStart.UseVisualStyleBackColor = true;
-            this.buttonStart.Click += new System.EventHandler(this.button4_Click);
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
             // groupBox1
             // 
@@ -169,6 +169,20 @@
             this.dataGridViewAnswer.Size = new System.Drawing.Size(320, 93);
             this.dataGridViewAnswer.TabIndex = 0;
             // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Характеристика";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 150;
+            // 
+            // Column4
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column4.HeaderText = "Значение";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 165;
+            // 
             // buttonAnswer
             // 
             this.buttonAnswer.Enabled = false;
@@ -179,7 +193,7 @@
             this.buttonAnswer.TabIndex = 21;
             this.buttonAnswer.Text = "Получить ответ";
             this.buttonAnswer.UseVisualStyleBackColor = true;
-            this.buttonAnswer.Click += new System.EventHandler(this.button1_Click);
+            this.buttonAnswer.Click += new System.EventHandler(this.buttonAnswer_Click);
             // 
             // buttonNext
             // 
@@ -191,7 +205,7 @@
             this.buttonNext.TabIndex = 22;
             this.buttonNext.Text = "Получить следующую популяцию";
             this.buttonNext.UseVisualStyleBackColor = true;
-            this.buttonNext.Click += new System.EventHandler(this.button14_Click);
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
             // groupBox2
             // 
@@ -232,7 +246,6 @@
             this.dataGridViewIterationInfo.RowHeadersVisible = false;
             this.dataGridViewIterationInfo.Size = new System.Drawing.Size(402, 221);
             this.dataGridViewIterationInfo.TabIndex = 1;
-            this.dataGridViewIterationInfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Column1
             // 
@@ -259,7 +272,6 @@
             this.pictureBoxDiagramm.Size = new System.Drawing.Size(363, 581);
             this.pictureBoxDiagramm.TabIndex = 8;
             this.pictureBoxDiagramm.TabStop = false;
-            this.pictureBoxDiagramm.Click += new System.EventHandler(this.pictureBoxDiagramm_Click);
             this.pictureBoxDiagramm.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox3_Paint);
             // 
             // pictureBox1
@@ -293,20 +305,6 @@
             this.pictureBoxGraph.TabIndex = 25;
             this.pictureBoxGraph.TabStop = false;
             this.pictureBoxGraph.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxGraph_Paint);
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Характеристика";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 150;
-            // 
-            // Column4
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column4.HeaderText = "Значение";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 165;
             // 
             // FormStepByStep
             // 
