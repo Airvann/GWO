@@ -3,12 +3,14 @@ using System.Collections.Generic;
 
 namespace AIS
 {
+    //Тип параметра а: линейная или квадратичная функция
     public enum Params
     {
         Linear,
         Quadratic
     }
 
+    //Класс алгоритма
     public class Algoritm
     {
         public Params param;
@@ -31,17 +33,20 @@ namespace AIS
         //Текущая итерация
         public int currentIteration = 0;
 
-        public Wolf alfa = new Wolf();
-        public Wolf beta = new Wolf();
-        public Wolf delta = new Wolf();
+        //3 наиболее приспособленные особи
+        public Wolf alfa = new Wolf();  //Альфа-особь
+        public Wolf beta = new Wolf();  //Бета-особь
+        public Wolf delta = new Wolf(); //Дельта-особь
 
         //Массив средней приспособленности
         public List<double> averageFitness = new List<double>();
 
         //Массив лучшей приспособленности
         public List<double> bestFitness = new List<double>();
+        
         //Параметр а
         private double a;
+
         private Vector A = new Vector();
 
         private Vector C = new Vector();
@@ -49,8 +54,8 @@ namespace AIS
         //Популяция волков
         public List<Wolf> individuals = new List<Wolf>();
 
+        //Конструктор по умолчанию
         public Algoritm(){}
-
 
         //Начальное формирование популяции
         public void FormingPopulation()
@@ -136,27 +141,35 @@ namespace AIS
         //Старт алгоритма
         public Wolf StartAlg(int population, int MaxCount, double[,] D, int f, Params param)
         {
+            //Передача параметров в алгоритм
             this.param = param;
             this.MaxCount = MaxCount;
             this.population = population;
             this.D = D;
             this.f = f;
 
+            //Формирование начальной популяции на множестве D
             FormingPopulation();
             
             for (int k = 0; k < MaxCount; k++)
             {
+                //Выбор трех наилучших
                 Selection();
-
+                
+                //Вычисление и добавление средней и лучшей приспособленности в список
                 bestFitness.Add(alfa.fitness);
                 AverageFitness();
+
+                //Перемещение волков
                 NewPackGeneration();
                 currentIteration++;
             }
+            //Финальная селекция, определение наиболее приспособленного волка
             Selection();
             return alfa;
         }
 
+        //Все тестовые функции
         private float function(double x1, double x2, int f)
         {
             float funct = 0;
@@ -203,6 +216,8 @@ namespace AIS
             }
             return funct;
         }
+
+        //Вспомогательная функция
         private double[] Cpow(double x, double y, int p)
         {
             double[] Cp = new double[2];
@@ -217,6 +232,8 @@ namespace AIS
             }
             return Cp;
         }
+
+        //метод вычисления средней приспособленности
         public double AverageFitness()
         {
             double sum = 0;
