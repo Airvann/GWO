@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace AIS
@@ -524,8 +525,7 @@ namespace AIS
 
         private void buttonHelp_Click(object sender, EventArgs e)
         {
-            FormHelp formHelp = new FormHelp();
-            formHelp.ShowDialog();
+            Process.Start("HelpFile.pdf");
         }
     }
 }

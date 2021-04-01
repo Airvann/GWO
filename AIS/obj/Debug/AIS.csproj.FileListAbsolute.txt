@@ -158,7 +158,6 @@ C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\bin\Debug\AIS.exe.config
 C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\bin\Debug\AIS.exe
 C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\bin\Debug\AIS.pdb
 C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Debug\AIS.csprojAssemblyReference.cache
-C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Debug\AIS.FormHelp.resources
 C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Debug\AIS.FormStepByStep.resources
 C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Debug\AIS.FormMain.resources
 C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Debug\AIS.Properties.Resources.resources
