@@ -63,39 +63,9 @@ namespace AIS.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1 {
+        internal static System.Drawing.Bitmap Trapfall {
             get {
-                object obj = ResourceManager.GetObject("_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _2 {
-            get {
-                object obj = ResourceManager.GetObject("_2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        internal static byte[] HelpFile {
-            get {
-                object obj = ResourceManager.GetObject("HelpFile", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Аклей31 {
-            get {
-                object obj = ResourceManager.GetObject("Аклей31", resourceCulture);
+                object obj = ResourceManager.GetObject("Trapfall", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +83,9 @@ namespace AIS.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap постановка {
+        internal static System.Drawing.Bitmap параболическая {
             get {
-                object obj = ResourceManager.GetObject("постановка", resourceCulture);
+                object obj = ResourceManager.GetObject("параболическая", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +93,9 @@ namespace AIS.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap постановка2 {
+        internal static System.Drawing.Bitmap ПостановкаМаксимум {
             get {
-                object obj = ResourceManager.GetObject("постановка2", resourceCulture);
+                object obj = ResourceManager.GetObject("ПостановкаМаксимум", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +103,9 @@ namespace AIS.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap постановка3 {
+        internal static System.Drawing.Bitmap Растригин {
             get {
-                object obj = ResourceManager.GetObject("постановка3", resourceCulture);
+                object obj = ResourceManager.GetObject("Растригин", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +113,9 @@ namespace AIS.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Растринг1 {
+        internal static System.Drawing.Bitmap Розенброк {
             get {
-                object obj = ResourceManager.GetObject("Растринг1", resourceCulture);
+                object obj = ResourceManager.GetObject("Розенброк", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +133,9 @@ namespace AIS.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap шафер {
+        internal static System.Drawing.Bitmap Шафер {
             get {
-                object obj = ResourceManager.GetObject("шафер", resourceCulture);
+                object obj = ResourceManager.GetObject("Шафер", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +143,19 @@ namespace AIS.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap швефель {
+        internal static System.Drawing.Bitmap Швефель {
             get {
-                object obj = ResourceManager.GetObject("швефель", resourceCulture);
+                object obj = ResourceManager.GetObject("Швефель", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Эклея {
+            get {
+                object obj = ResourceManager.GetObject("Эклея", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

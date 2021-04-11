@@ -121,34 +121,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\HelpFile.pdf" />
-    <None Include="Resources\Растринг1.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Аклей31.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\мульти.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\рут.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\шафер.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\швефель.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\постановка.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\постановка2.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\постановка3.bmp" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
@@ -166,7 +138,34 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\a1.bmp" />
+    <None Include="Resources\Trapfall.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\мульти.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\параболическая.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ПостановкаМаксимум.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Растригин.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Розенброк.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\рут.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Шафер.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Швефель.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Эклея.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

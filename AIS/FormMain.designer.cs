@@ -122,7 +122,7 @@
             "10. Параболическая функция"});
             this.comboBox1.Location = new System.Drawing.Point(6, 53);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(303, 24);
+            this.comboBox1.Size = new System.Drawing.Size(355, 24);
             this.comboBox1.TabIndex = 3;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -179,7 +179,7 @@
             // 
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column2.HeaderText = "a0";
+            this.Column2.HeaderText = "a";
             this.Column2.Name = "Column2";
             this.Column2.Width = 60;
             // 
@@ -187,7 +187,7 @@
             // 
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Column3.HeaderText = "b0";
+            this.Column3.HeaderText = "b";
             this.Column3.Name = "Column3";
             this.Column3.Width = 60;
             // 
@@ -249,7 +249,7 @@
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox2.Location = new System.Drawing.Point(6, 83);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(303, 129);
+            this.pictureBox2.Size = new System.Drawing.Size(355, 129);
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             // 
@@ -429,7 +429,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox3.Image = global::AIS.Properties.Resources.постановка3;
+            this.pictureBox3.Image = global::AIS.Properties.Resources.ПостановкаМаксимум;
             this.pictureBox3.Location = new System.Drawing.Point(11, 34);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(352, 181);
@@ -542,12 +542,12 @@
         private System.Windows.Forms.Button buttonHelp;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }
 

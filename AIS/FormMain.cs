@@ -107,7 +107,7 @@ namespace AIS
                 Ar[3] = 600;
                 Ar[4] = 800;
                 flag = true;
-                pictureBox2.Image = Properties.Resources.швефель;
+                pictureBox2.Image = Properties.Resources.Швефель;
             }
             else if (comboBox1.SelectedIndex == 1)
             {
@@ -157,7 +157,7 @@ namespace AIS
                 Ar[3] = 0.8F;
                 Ar[4] = 0.99F;
                 flag = true;
-                pictureBox2.Image = Properties.Resources.шафер;
+                pictureBox2.Image = Properties.Resources.Шафер;
 
             }
             else if (comboBox1.SelectedIndex == 4)
@@ -174,7 +174,7 @@ namespace AIS
                 Ar[3] = 10F;
                 Ar[4] = 19F;
                 flag = true;
-                pictureBox2.Image = Properties.Resources.Растринг1;
+                pictureBox2.Image = Properties.Resources.Растригин;
 
             }
             else if (comboBox1.SelectedIndex == 5)
@@ -191,7 +191,7 @@ namespace AIS
                 Ar[3] = 14F;
                 Ar[4] = 19F;
                 flag = true;
-                pictureBox2.Image = Properties.Resources.Аклей31;
+                pictureBox2.Image = Properties.Resources.Эклея;
             }
             else if (comboBox1.SelectedIndex == 6)
             {
@@ -223,7 +223,7 @@ namespace AIS
                 Ar[3] = 0.3F;
                 Ar[4] = 0.5F;
                 flag = true;
-                //pictureBox2.Image = Properties.Resources.Аклей31;
+                pictureBox2.Image = Properties.Resources.Trapfall;
             }
             else if (comboBox1.SelectedIndex == 8)
             {
@@ -239,7 +239,7 @@ namespace AIS
                 Ar[3] = -4F;
                 Ar[4] = -0.5F;
                 flag = true;
-                //pictureBox2.Image = Properties.Resources.Аклей31;
+                pictureBox2.Image = Properties.Resources.Розенброк;
             }
             else if (comboBox1.SelectedIndex == 9)
             {
@@ -255,6 +255,7 @@ namespace AIS
                 Ar[3] = -0.8F;
                 Ar[4] = -0.1F;
                 flag = true;
+                pictureBox2.Image = Properties.Resources.параболическая;
             }
             Ar[5] = 0;
             Ar[6] = 0;
@@ -418,24 +419,24 @@ namespace AIS
         { 
             float funct = 0;
             if (f == 0)
-                funct = (float) (x1 * Math.Sin(Math.Sqrt(Math.Abs(x1))) + x2 * Math.Sin(Math.Sqrt(Math.Abs(x2))));
+                funct = (float)(x1 * Math.Sin(Math.Sqrt(Math.Abs(x1))) + x2 * Math.Sin(Math.Sqrt(Math.Abs(x2))));
             else if (f == 1)
                 funct = (float)(x1 * Math.Sin(4 * Math.PI * x1) - x2 * Math.Sin(4 * Math.PI * x2 + Math.PI) + 1);
             else if (f == 2)
-            { 
-                double[] c6 = Cpow(x1,x2,6);
+            {
+                double[] c6 = Cpow(x1, x2, 6);
                 funct = (float)(1 / (1 + Math.Sqrt((c6[0] - 1) * (c6[0] - 1) + c6[1] * c6[1])));
             }
             else if (f == 3)
-                funct = (float)(0.5-(Math.Pow(Math.Sin(Math.Sqrt(x1*x1+x2*x2)),2)-0.5)/(1+0.001*(x1*x1+x2*x2)));
+                funct = (float)(0.5 - (Math.Pow(Math.Sin(Math.Sqrt(x1 * x1 + x2 * x2)), 2) - 0.5) / (1 + 0.001 * (x1 * x1 + x2 * x2)));
             else if (f == 4)
-                funct = (float)((-x1 * x1 + 10 * Math.Cos(2 * Math.PI * x1)) + (-x2 * x2 + 10 * Math.Cos(2*Math.PI * x2)));
+                funct = (float)((-x1 * x1 + 10 * Math.Cos(2 * Math.PI * x1)) + (-x2 * x2 + 10 * Math.Cos(2 * Math.PI * x2)));
             else if (f == 5)
                 funct = (float)(-Math.E + 20 * Math.Exp(-0.2 * Math.Sqrt((x1 * x1 + x2 * x2) / 2)) + Math.Exp((Math.Cos(2 * Math.PI * x1) + Math.Cos(2 * Math.PI * x2)) / 2));
             else if (f == 6)
                 funct = (float)(Math.Pow(Math.Cos(2 * x1 * x1) - 1.1, 2) + Math.Pow(Math.Sin(0.5 * x1) - 1.2, 2) - Math.Pow(Math.Cos(2 * x2 * x2) - 1.1, 2) + Math.Pow(Math.Sin(0.5 * x2) - 1.2, 2));
             else if (f == 7)
-                funct = (float)(-Math.Sqrt(Math.Abs(Math.Sin(Math.Sin(Math.Sqrt(Math.Abs(Math.Sin(x1-1)))+Math.Sqrt(Math.Abs(Math.Sin(x2+2)))))))+1);
+                funct = (float)(-Math.Sqrt(Math.Abs(Math.Sin(Math.Sin(Math.Sqrt(Math.Abs(Math.Sin(x1 - 1))) + Math.Sqrt(Math.Abs(Math.Sin(x2 + 2))))))) + 1);
             else if (f == 8)
                 funct = (float)(-(1 - x1) * (1 - x1) - 100 * (x2 - x1 * x1) * (x2 - x1 * x1));
             else if (f == 9)
@@ -507,10 +508,10 @@ namespace AIS
             switch (comboBoxSelectParams.SelectedIndex)
             {
                 case 0:
-                    pictureBox4.Image = Properties.Resources._1;
+                    //pictureBox4.Image = Properties.Resources.линейная;    TODO:!
                     break;
                 case 1:
-                    pictureBox4.Image = Properties.Resources._2;
+                    //pictureBox4.Image = Properties.Resources.кубическая;
                     break;
                 default:
                     break;
