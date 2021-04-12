@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AIS
 {
@@ -75,8 +76,7 @@ namespace AIS
 
         public void Selection()
         {
-            //Пузырьковая сортировка
-            Sort(individuals);
+            individuals = individuals.OrderByDescending(s => s.fitness).ToList();
 
             //Выбираем наиболее приспосоленных волков (сделано так, чтобы была передача значений, а не ссылки) 
             alfa.coords.vector[0] = individuals[0].coords.vector[0];    alfa.coords.vector[1] = individuals[0].coords.vector[1];    alfa.fitness = individuals[0].fitness;
@@ -125,20 +125,28 @@ namespace AIS
             }
         }
 
-        //Пузырьковая сортировка
-        private void Sort(List<Wolf> list)
+        //Старт алгоритма
+
+        public Wolf FastStartAlg(int population, int MaxCount, double[,] D, int f, Params param) 
         {
-            for (int i = 0; i < list.Count; i++)
-                for (int j = 0; j < list.Count - i - 1; j++)
-                    if (list[j].fitness < list[j + 1].fitness)
-                    {
-                        Wolf tmp = list[j];
-                        list[j] = list[j + 1];
-                        list[j + 1] = tmp;
-                    }
+            this.param = param;
+            this.MaxCount = MaxCount;
+            this.population = population;
+            this.D = D;
+            this.f = f;
+
+            FormingPopulation();
+
+            for (int k = 0; k < MaxCount; k++)
+            {
+                Selection();
+                NewPackGeneration();
+                currentIteration++;
+            }
+            Selection();
+            return alfa;
         }
 
-        //Старт алгоритма
         public Wolf StartAlg(int population, int MaxCount, double[,] D, int f, Params param)
         {
             //Передача параметров в алгоритм

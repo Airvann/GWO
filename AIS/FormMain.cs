@@ -14,14 +14,7 @@ namespace AIS
         private Algoritm alg;
         private int population = 0;
         private int MaxIteration = 0;
-        private Wolf result;
         private double[,] obl = new double[2, 2];
-
-        //анализ работы
-        private List<double> averFuncDeviation;
-        private double minDeviation;
-        private int successCount = 0;
-        private double eps;
 
         //Не мое
         private bool[] flines = new bool[8];
@@ -37,16 +30,19 @@ namespace AIS
             InitializeComponent();
             InitDataGridView();
 
-            if ((File.Exists("protocol.txt")))
+            comboBoxSelectParams.SelectedIndexChanged += new EventHandler(comboBox_SelectedIndexChanged);
+            comboBox1.SelectedIndexChanged += new EventHandler(comboBox_SelectedIndexChanged);
+
+            if (File.Exists("protocol.txt"))
                 File.Delete("protocol.txt");
 
             FileStream fs = new FileStream("protocol.txt", FileMode.Append, FileAccess.Write);
 
             StreamWriter r = new StreamWriter(fs);
-            r.Write($"+----------------------------------------------------------------------------------------------------------------------------------+\n" +
-                    $"|        Cреднее значение отклонения     |  Наименьшее значение отклонения  |Среднеквадратическое отклонение | Количество успехов  |\n" +
-                    $"|            от точного решения          |                                  |                                |                     |\n" +
-                    $"+----------------------------------------+----------------------------------+--------------------------------+---------------------+\n");
+            r.Write($"+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\n" +
+                    $"| Номер функции | Размер популяции | Количество итераций |        Cреднее значение отклонения     |  Наименьшее значение отклонения  |Среднеквадратическое отклонение | Количество успехов  |\n" +
+                    $"|               |                  |                     |            от точного решения          |                                  |                                |                     |\n" +
+                    $"+---------------+------------------+---------------------+----------------------------------------+----------------------------------+--------------------------------+---------------------+\n");
             r.Close();
             fs.Close();
         }
@@ -91,7 +87,7 @@ namespace AIS
                     Params param = (comboBoxSelectParams.SelectedIndex == 0) ? Params.Linear : Params.Quadratic;
                     alg = new Algoritm();
 
-                    result = alg.StartAlg(population, MaxIteration, obl, z, param);
+                    Wolf result = alg.FastStartAlg(population, MaxIteration, obl, z, param);
                     dataGridView3.Rows[0].Cells[1].Value = string.Format($"{result.coords[0]:F8}");
                     dataGridView3.Rows[1].Cells[1].Value = string.Format($"{result.coords[1]:F8}");
                     dataGridView3.Rows[2].Cells[1].Value = string.Format($"{result.fitness:F8}");
@@ -100,19 +96,11 @@ namespace AIS
                 }
             }
             else
-            {
-                MessageBox.Show("Введите корректные параметры области определения", "Ошибка три запуске алгоритма", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+                MessageBox.Show("Введите корректные параметры", "Ошибка при запуске алгоритма", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if ((comboBox1.SelectedIndex != -1) && (comboBoxSelectParams.SelectedIndex != -1))
-            {
-                buttonAnswer.Enabled = true;
-                buttonStepByStep.Enabled = true;
-            }
-
             if (comboBox1.SelectedIndex == 0)
             {
                 dataGridView1.Rows[0].Cells[1].Value = "-500";
@@ -156,7 +144,7 @@ namespace AIS
 
                 Ar[0] = 0.2F;
                 Ar[1] = 0.45F;
-                Ar[2] = 0.499999F;//0.5000001F;
+                Ar[2] = 0.499999F;
                 Ar[3] = 0.6F;
                 Ar[4] = 0.9F;
                 flag = true;
@@ -173,7 +161,7 @@ namespace AIS
 
                 Ar[0] = 0.2F;
                 Ar[1] = 0.4F;
-                Ar[2] = 0.6F;//0.5000001F;
+                Ar[2] = 0.6F;
                 Ar[3] = 0.8F;
                 Ar[4] = 0.99F;
                 flag = true;
@@ -190,7 +178,7 @@ namespace AIS
 
                 Ar[0] = -20F;
                 Ar[1] = -10F;
-                Ar[2] = 0F;//0.5000001F;
+                Ar[2] = 0F;
                 Ar[3] = 10F;
                 Ar[4] = 19F;
                 flag = true;
@@ -207,7 +195,7 @@ namespace AIS
 
                 Ar[0] = 4F;
                 Ar[1] = 7F;
-                Ar[2] = 10F;//0.5000001F;
+                Ar[2] = 10F;
                 Ar[3] = 14F;
                 Ar[4] = 19F;
                 flag = true;
@@ -223,11 +211,11 @@ namespace AIS
 
                 Ar[0] = 2F;
                 Ar[1] = 8F;
-                Ar[2] = 10F;//0.5000001F;
+                Ar[2] = 10F;
                 Ar[3] = 12F;
                 Ar[4] = 14F;
                 flag = true;
-                //pictureBox2.Image = Properties.Resources.Аклей31;
+                pictureBox2.Image = Properties.Resources.Skin;
             }
             else if (comboBox1.SelectedIndex == 7)
             {
@@ -239,7 +227,7 @@ namespace AIS
 
                 Ar[0] = 0.1F;
                 Ar[1] = 0.15F;
-                Ar[2] = 0.2F;//0.5000001F;
+                Ar[2] = 0.2F;
                 Ar[3] = 0.3F;
                 Ar[4] = 0.5F;
                 flag = true;
@@ -255,7 +243,7 @@ namespace AIS
 
                 Ar[0] = -350F;
                 Ar[1] = -180F;
-                Ar[2] = -30F;//0.5000001F;
+                Ar[2] = -30F;
                 Ar[3] = -4F;
                 Ar[4] = -0.5F;
                 flag = true;
@@ -271,12 +259,13 @@ namespace AIS
 
                 Ar[0] = -7F;
                 Ar[1] = -4F;
-                Ar[2] = -2F;//0.5000001F;
+                Ar[2] = -2F;
                 Ar[3] = -0.8F;
                 Ar[4] = -0.1F;
                 flag = true;
                 pictureBox2.Image = Properties.Resources.параболическая;
             }
+
             Ar[5] = 0;
             Ar[6] = 0;
             Ar[7] = 0;
@@ -305,18 +294,7 @@ namespace AIS
             float y0 = h/2;
             float a = 30;
             
-            List<PointF> points = new List<PointF>();
-            Pen p1 = new Pen(Color.PaleGreen, 1);
-            Pen p2 = new Pen(Color.GreenYellow, 1);
-            Pen p3 = new Pen(Color.YellowGreen, 1);
-            Pen p4 = new Pen(Color.Yellow, 1);
-            Pen p5 = new Pen(Color.Orange, 1);
-            Pen p6 = new Pen(Color.OrangeRed, 1);
-            Pen p7 = new Pen(Color.Red, 1);
-            Pen p8 = new Pen(Color.Brown, 1);
-            Pen p9 = new Pen(Color.Maroon, 1);
             Pen p10 = new Pen(Color.Black, 1);
-            Pen p11 = new Pen(Color.Blue, 4);
 
             Font font1 = new Font("TimesNewRoman", 10, FontStyle.Bold);
             Font font2 = new Font("TimesNewRoman", 8);
@@ -343,7 +321,6 @@ namespace AIS
                 double dx = x2 - x1;
                 double dy = y2 - y1;
                 double dxy = dx-dy;
-
 
                 double bxy = Math.Max(dx, dy);
                 double step;
@@ -426,7 +403,7 @@ namespace AIS
                         }
             }
             
-            //Стрелочки абцисс и ординат
+            //Стрелки абцисс и ординат
             p10.EndCap = LineCap.ArrowAnchor;
             e.Graphics.DrawLine(p10, 0, h - a, w - 10, h - a);
             e.Graphics.DrawLine(p10, a, h, a, 0);
@@ -495,8 +472,10 @@ namespace AIS
                 obl[0, 1] = Convert.ToDouble(dataGridView1.Rows[0].Cells[2].Value);
                 obl[1, 0] = Convert.ToDouble(dataGridView1.Rows[1].Cells[1].Value);
                 obl[1, 1] = Convert.ToDouble(dataGridView1.Rows[1].Cells[2].Value);
+
                 population = Convert.ToInt32(dataGridView2.Rows[0].Cells[1].Value);
                 MaxIteration = Convert.ToInt32(dataGridView2.Rows[1].Cells[1].Value);
+
                 FormStepByStep form = new FormStepByStep(comboBox1.SelectedIndex, obl, population, MaxIteration, exact)
                 {
                     flines = flines,
@@ -512,26 +491,25 @@ namespace AIS
             Close();
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void comboBox_SelectedIndexChanged(object sender, EventArgs e) 
         {
-
+            if ((comboBox1.SelectedIndex != -1) && (comboBoxSelectParams.SelectedIndex != -1))
+            {
+                buttonAnswer.Enabled = true;
+                buttonStepByStep.Enabled = true;
+                buttonAnalysis.Enabled = true;
+            }
         }
 
         private void comboBoxSelectParams_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            if ((comboBox1.SelectedIndex != -1)&&(comboBoxSelectParams.SelectedIndex != -1))
-            {
-                buttonAnswer.Enabled = true;
-                buttonStepByStep.Enabled = true;
-            }
             switch (comboBoxSelectParams.SelectedIndex)
             {
                 case 0:
-                    //pictureBox4.Image = Properties.Resources.линейная;    TODO:!
+                    pictureBox4.Image = Properties.Resources.NonSquare;
                     break;
                 case 1:
-                    //pictureBox4.Image = Properties.Resources.кубическая;
+                    pictureBox4.Image = Properties.Resources.Square;
                     break;
                 default:
                     break;
@@ -539,24 +517,13 @@ namespace AIS
             pictureBox4.Refresh();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonHelp_Click(object sender, EventArgs e)
         {
             Process.Start("HelpFile.pdf");
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonAnalysis_Click(object sender, EventArgs e)
         {
-
             if (dataGridView1.Rows[0].Cells[1].Value != null &&
                 dataGridView1.Rows[0].Cells[2].Value != null &&
                 dataGridView1.Rows[1].Cells[1].Value != null &&
@@ -564,19 +531,18 @@ namespace AIS
             {
                 if ((comboBox1.SelectedIndex != -1) && (comboBoxSelectParams.SelectedIndex != -1))
                 {
+                    List<double> averFuncDeviation = new List<double>();
+                    double minDeviation = 0;
+                    int successCount = 0;
+                    double eps = Math.Max(Math.Abs(obl[0, 0] - obl[0, 1]), Math.Abs(obl[1, 0] - obl[1, 1])) / 1000f;
                     double averDer = 0;
-                    double srkvotkl = 0;
+                    double normalDerivation = 0;
                     int z = comboBox1.SelectedIndex;
 
                     obl[0, 0] = Convert.ToDouble(dataGridView1.Rows[0].Cells[1].Value);
                     obl[0, 1] = Convert.ToDouble(dataGridView1.Rows[0].Cells[2].Value);
                     obl[1, 0] = Convert.ToDouble(dataGridView1.Rows[1].Cells[1].Value);
                     obl[1, 1] = Convert.ToDouble(dataGridView1.Rows[1].Cells[2].Value);
-
-                    averFuncDeviation = new List<double>();
-                    successCount = 0;
-                    minDeviation = 0;
-                    eps = Math.Max(Math.Abs(obl[0,0] - obl[0,1]), Math.Abs(obl[1, 0] - obl[1, 1]))/1000f;
 
                     population = Convert.ToInt32(dataGridView2.Rows[0].Cells[1].Value);
                     MaxIteration = Convert.ToInt32(dataGridView2.Rows[1].Cells[1].Value);
@@ -585,29 +551,28 @@ namespace AIS
                     for (int i = 0; i < 100; i++)
                     {
                         alg = new Algoritm();
-                        result = alg.StartAlg(population, MaxIteration, obl, z, param);
+                        Wolf result = alg.FastStartAlg(population, MaxIteration, obl, z, param);
                         averFuncDeviation.Add(Math.Abs(result.fitness - exact));
                     }
 
-                    double tmp1 = 0;
+                    double deltaSum = 0;
                     for (int i = 0; i < 100; i++)
-                        tmp1 += averFuncDeviation[i];
+                        deltaSum += averFuncDeviation[i];
                     
-                    averDer = tmp1 / 100f;
+                    averDer = deltaSum / 100f;
 
                     averFuncDeviation.Sort();
                     minDeviation = averFuncDeviation[0];
                     
-                    double tmp2 = 0;
+                    double dispersion = 0;
                     for (int i = 0; i < 100; i++)
-                        tmp2 += Math.Pow(averFuncDeviation[i] - averDer, 2);
-                    srkvotkl = Math.Sqrt((tmp2 / 100f));
-
+                        dispersion += Math.Pow(averFuncDeviation[i] - averDer, 2);
+                    normalDerivation = Math.Sqrt((dispersion / 100f));
 
                     FileStream fs = new FileStream("protocol.txt", FileMode.Append, FileAccess.Write);
                     StreamWriter r = new StreamWriter(fs);
-                    r.Write(String.Format(@"|               {0:f6}                 |            {1:f6}              |            {2:f6}            |                     |
-|----------------------------------------+----------------------------------+--------------------------------+---------------------|", averDer, minDeviation, srkvotkl));
+                    r.Write(String.Format(@"| {0, 4}          |    {1, 6}        |      {2, 6}         |{3, 22:f6}                  |{4, 20:f6}              |{5, 20:f6}            |                     |
+|---------------+------------------+---------------------+----------------------------------------+----------------------------------+--------------------------------+---------------------|", z + 1, population, MaxIteration, averDer, minDeviation, normalDerivation));
                     r.Write("\n");
                     r.Close();
                     fs.Close();
@@ -615,9 +580,7 @@ namespace AIS
                 }
             }
             else
-            {
-                MessageBox.Show("Введите корректные параметры области определения", "Ошибка три запуске алгоритма", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+                MessageBox.Show("Введите корректные параметры", "Ошибка при запуске алгоритма", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

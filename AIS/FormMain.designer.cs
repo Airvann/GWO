@@ -211,7 +211,6 @@
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Входные данные";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // pictureBox4
             // 
@@ -222,7 +221,6 @@
             this.pictureBox4.Size = new System.Drawing.Size(156, 70);
             this.pictureBox4.TabIndex = 32;
             this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // label6
             // 
@@ -232,7 +230,6 @@
             this.label6.Size = new System.Drawing.Size(88, 16);
             this.label6.TabIndex = 31;
             this.label6.Text = "Параметр а:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // comboBoxSelectParams
             // 
@@ -456,6 +453,7 @@
             // 
             // buttonAnalysis
             // 
+            this.buttonAnalysis.Enabled = false;
             this.buttonAnalysis.Location = new System.Drawing.Point(11, 93);
             this.buttonAnalysis.Name = "buttonAnalysis";
             this.buttonAnalysis.Size = new System.Drawing.Size(348, 33);
