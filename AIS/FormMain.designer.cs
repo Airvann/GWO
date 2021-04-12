@@ -68,6 +68,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonAnalysis = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonHelp = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -218,9 +219,10 @@
             this.pictureBox4.InitialImage = null;
             this.pictureBox4.Location = new System.Drawing.Point(6, 502);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(156, 71);
+            this.pictureBox4.Size = new System.Drawing.Size(156, 70);
             this.pictureBox4.TabIndex = 32;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // label6
             // 
@@ -349,7 +351,7 @@
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle13;
-            this.dataGridView3.Location = new System.Drawing.Point(11, 129);
+            this.dataGridView3.Location = new System.Drawing.Point(11, 160);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
             this.dataGridView3.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -409,7 +411,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 110);
+            this.label4.Location = new System.Drawing.Point(12, 141);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(214, 16);
             this.label4.TabIndex = 36;
@@ -439,6 +441,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.buttonAnalysis);
             this.groupBox3.Controls.Add(this.buttonAnswer);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.dataGridView3);
@@ -450,6 +453,16 @@
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Работа алгоритма";
+            // 
+            // buttonAnalysis
+            // 
+            this.buttonAnalysis.Location = new System.Drawing.Point(11, 93);
+            this.buttonAnalysis.Name = "buttonAnalysis";
+            this.buttonAnalysis.Size = new System.Drawing.Size(348, 33);
+            this.buttonAnalysis.TabIndex = 37;
+            this.buttonAnalysis.Text = "Анализ эффективности метода";
+            this.buttonAnalysis.UseVisualStyleBackColor = true;
+            this.buttonAnalysis.Click += new System.EventHandler(this.buttonAnalysis_Click);
             // 
             // label5
             // 
@@ -548,6 +561,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Button buttonAnalysis;
     }
 }
 

@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Diagnostics;
 using System.Windows.Forms;
+using System.IO;
 
 namespace AIS
 {
@@ -15,7 +16,13 @@ namespace AIS
         private int MaxIteration = 0;
         private Wolf result;
         private double[,] obl = new double[2, 2];
-        
+
+        //анализ работы
+        private List<double> averFuncDeviation;
+        private double minDeviation;
+        private int successCount = 0;
+        private double eps;
+
         //Не мое
         private bool[] flines = new bool[8];
         private float k = 1;
@@ -29,6 +36,19 @@ namespace AIS
         {
             InitializeComponent();
             InitDataGridView();
+
+            if ((File.Exists("protocol.txt")))
+                File.Delete("protocol.txt");
+
+            FileStream fs = new FileStream("protocol.txt", FileMode.Append, FileAccess.Write);
+
+            StreamWriter r = new StreamWriter(fs);
+            r.Write($"+----------------------------------------------------------------------------------------------------------------------------------+\n" +
+                    $"|        Cреднее значение отклонения     |  Наименьшее значение отклонения  |Среднеквадратическое отклонение | Количество успехов  |\n" +
+                    $"|            от точного решения          |                                  |                                |                     |\n" +
+                    $"+----------------------------------------+----------------------------------+--------------------------------+---------------------+\n");
+            r.Close();
+            fs.Close();
         }
 
         private void InitDataGridView()
@@ -527,6 +547,77 @@ namespace AIS
         private void buttonHelp_Click(object sender, EventArgs e)
         {
             Process.Start("HelpFile.pdf");
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAnalysis_Click(object sender, EventArgs e)
+        {
+
+            if (dataGridView1.Rows[0].Cells[1].Value != null &&
+                dataGridView1.Rows[0].Cells[2].Value != null &&
+                dataGridView1.Rows[1].Cells[1].Value != null &&
+                dataGridView1.Rows[1].Cells[2].Value != null)
+            {
+                if ((comboBox1.SelectedIndex != -1) && (comboBoxSelectParams.SelectedIndex != -1))
+                {
+                    double averDer = 0;
+                    double srkvotkl = 0;
+                    int z = comboBox1.SelectedIndex;
+
+                    obl[0, 0] = Convert.ToDouble(dataGridView1.Rows[0].Cells[1].Value);
+                    obl[0, 1] = Convert.ToDouble(dataGridView1.Rows[0].Cells[2].Value);
+                    obl[1, 0] = Convert.ToDouble(dataGridView1.Rows[1].Cells[1].Value);
+                    obl[1, 1] = Convert.ToDouble(dataGridView1.Rows[1].Cells[2].Value);
+
+                    averFuncDeviation = new List<double>();
+                    successCount = 0;
+                    minDeviation = 0;
+                    eps = Math.Max(Math.Abs(obl[0,0] - obl[0,1]), Math.Abs(obl[1, 0] - obl[1, 1]))/1000f;
+
+                    population = Convert.ToInt32(dataGridView2.Rows[0].Cells[1].Value);
+                    MaxIteration = Convert.ToInt32(dataGridView2.Rows[1].Cells[1].Value);
+                    Params param = (comboBoxSelectParams.SelectedIndex == 0) ? Params.Linear : Params.Quadratic;
+
+                    for (int i = 0; i < 100; i++)
+                    {
+                        alg = new Algoritm();
+                        result = alg.StartAlg(population, MaxIteration, obl, z, param);
+                        averFuncDeviation.Add(Math.Abs(result.fitness - exact));
+                    }
+
+                    double tmp1 = 0;
+                    for (int i = 0; i < 100; i++)
+                        tmp1 += averFuncDeviation[i];
+                    
+                    averDer = tmp1 / 100f;
+
+                    averFuncDeviation.Sort();
+                    minDeviation = averFuncDeviation[0];
+                    
+                    double tmp2 = 0;
+                    for (int i = 0; i < 100; i++)
+                        tmp2 += Math.Pow(averFuncDeviation[i] - averDer, 2);
+                    srkvotkl = Math.Sqrt((tmp2 / 100f));
+
+
+                    FileStream fs = new FileStream("protocol.txt", FileMode.Append, FileAccess.Write);
+                    StreamWriter r = new StreamWriter(fs);
+                    r.Write(String.Format(@"|               {0:f6}                 |            {1:f6}              |            {2:f6}            |                     |
+|----------------------------------------+----------------------------------+--------------------------------+---------------------|", averDer, minDeviation, srkvotkl));
+                    r.Write("\n");
+                    r.Close();
+                    fs.Close();
+                    Process.Start("protocol.txt");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Введите корректные параметры области определения", "Ошибка три запуске алгоритма", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
