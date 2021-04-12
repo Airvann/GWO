@@ -16,6 +16,8 @@ namespace AIS
         private int MaxIteration = 0;
         private double[,] obl = new double[2, 2];
 
+        private double[] exactPoint = new double[2];
+
         //Не мое
         private bool[] flines = new bool[8];
         private float k = 1;
@@ -108,6 +110,7 @@ namespace AIS
                 dataGridView1.Rows[1].Cells[1].Value = "-500";
                 dataGridView1.Rows[1].Cells[2].Value = "500";
                 exact = 837.9658;
+                exactPoint[0] = 420.9687;   exactPoint[1] = 420.9687;
 
                 Ar[0] = -200;
                 Ar[1] = -1;
@@ -124,6 +127,7 @@ namespace AIS
                 dataGridView1.Rows[1].Cells[1].Value = "-2";
                 dataGridView1.Rows[1].Cells[2].Value = "2";
                 exact = 4.253888;
+                exactPoint[0] = 1.6288; exactPoint[1] = 1.6288;
 
                 Ar[0] = 0;
                 Ar[1] = 1;
@@ -132,7 +136,6 @@ namespace AIS
                 Ar[4] = 4;
                 flag = true;
                 pictureBox2.Image = Properties.Resources.мульти;
-
             }
             else if (comboBox1.SelectedIndex == 2)
             {
@@ -141,6 +144,7 @@ namespace AIS
                 dataGridView1.Rows[1].Cells[1].Value = "-2";
                 dataGridView1.Rows[1].Cells[2].Value = "2";
                 exact = 1;
+                exactPoint[0] = 0.5; exactPoint[1] = 0.866;
 
                 Ar[0] = 0.2F;
                 Ar[1] = 0.45F;
@@ -158,6 +162,7 @@ namespace AIS
                 dataGridView1.Rows[1].Cells[1].Value = "-10";
                 dataGridView1.Rows[1].Cells[2].Value = "10";
                 exact = 1;
+                exactPoint[0] = 0; exactPoint[1] = 0;
 
                 Ar[0] = 0.2F;
                 Ar[1] = 0.4F;
@@ -175,6 +180,7 @@ namespace AIS
                 dataGridView1.Rows[1].Cells[1].Value = "-5";
                 dataGridView1.Rows[1].Cells[2].Value = "5";
                 exact = 20;
+                exactPoint[0] = 1.6288; exactPoint[1] = 1.6288; //?
 
                 Ar[0] = -20F;
                 Ar[1] = -10F;
@@ -192,6 +198,7 @@ namespace AIS
                 dataGridView1.Rows[1].Cells[1].Value = "-10";
                 dataGridView1.Rows[1].Cells[2].Value = "10";
                 exact = 0;
+                exactPoint[0] = 0; exactPoint[1] = 0;
 
                 Ar[0] = 4F;
                 Ar[1] = 7F;
@@ -208,6 +215,7 @@ namespace AIS
                 dataGridView1.Rows[1].Cells[1].Value = "-5";
                 dataGridView1.Rows[1].Cells[2].Value = "5";
                 exact = 14.060606;
+                exactPoint[0] = -3.3157; exactPoint[1] = -3.0725;
 
                 Ar[0] = 2F;
                 Ar[1] = 8F;
@@ -224,6 +232,7 @@ namespace AIS
                 dataGridView1.Rows[1].Cells[1].Value = "-5";
                 dataGridView1.Rows[1].Cells[2].Value = "5";
                 exact = 1;
+                exactPoint[0] = 1; exactPoint[1] = -2;
 
                 Ar[0] = 0.1F;
                 Ar[1] = 0.15F;
@@ -240,6 +249,7 @@ namespace AIS
                 dataGridView1.Rows[1].Cells[1].Value = "-1";
                 dataGridView1.Rows[1].Cells[2].Value = "5";
                 exact = 0;
+                exactPoint[0] = 1; exactPoint[1] = 1;
 
                 Ar[0] = -350F;
                 Ar[1] = -180F;
@@ -256,6 +266,7 @@ namespace AIS
                 dataGridView1.Rows[1].Cells[1].Value = "-5";
                 dataGridView1.Rows[1].Cells[2].Value = "5";
                 exact = 0;
+                exactPoint[0] = 0; exactPoint[1] = 0;
 
                 Ar[0] = -7F;
                 Ar[1] = -4F;
@@ -531,6 +542,11 @@ namespace AIS
             {
                 if ((comboBox1.SelectedIndex != -1) && (comboBoxSelectParams.SelectedIndex != -1))
                 {
+                    obl[0, 0] = Convert.ToDouble(dataGridView1.Rows[0].Cells[1].Value);
+                    obl[0, 1] = Convert.ToDouble(dataGridView1.Rows[0].Cells[2].Value);
+                    obl[1, 0] = Convert.ToDouble(dataGridView1.Rows[1].Cells[1].Value);
+                    obl[1, 1] = Convert.ToDouble(dataGridView1.Rows[1].Cells[2].Value);
+
                     List<double> averFuncDeviation = new List<double>();
                     double minDeviation = 0;
                     int successCount = 0;
@@ -538,11 +554,6 @@ namespace AIS
                     double averDer = 0;
                     double normalDerivation = 0;
                     int z = comboBox1.SelectedIndex;
-
-                    obl[0, 0] = Convert.ToDouble(dataGridView1.Rows[0].Cells[1].Value);
-                    obl[0, 1] = Convert.ToDouble(dataGridView1.Rows[0].Cells[2].Value);
-                    obl[1, 0] = Convert.ToDouble(dataGridView1.Rows[1].Cells[1].Value);
-                    obl[1, 1] = Convert.ToDouble(dataGridView1.Rows[1].Cells[2].Value);
 
                     population = Convert.ToInt32(dataGridView2.Rows[0].Cells[1].Value);
                     MaxIteration = Convert.ToInt32(dataGridView2.Rows[1].Cells[1].Value);
@@ -552,6 +563,8 @@ namespace AIS
                     {
                         alg = new Algoritm();
                         Wolf result = alg.FastStartAlg(population, MaxIteration, obl, z, param);
+                        if ((Math.Abs(result.coords[0] - exactPoint[0]) < eps) && (Math.Abs(result.coords[1] - exactPoint[1]) < eps))
+                            successCount++;
                         averFuncDeviation.Add(Math.Abs(result.fitness - exact));
                     }
 
@@ -571,8 +584,8 @@ namespace AIS
 
                     FileStream fs = new FileStream("protocol.txt", FileMode.Append, FileAccess.Write);
                     StreamWriter r = new StreamWriter(fs);
-                    r.Write(String.Format(@"| {0, 4}          |    {1, 6}        |      {2, 6}         |{3, 22:f6}                  |{4, 20:f6}              |{5, 20:f6}            |                     |
-|---------------+------------------+---------------------+----------------------------------------+----------------------------------+--------------------------------+---------------------|", z + 1, population, MaxIteration, averDer, minDeviation, normalDerivation));
+                    r.Write(String.Format(@"| {0, 4}          |    {1, 6}        |      {2, 6}         |{3, 22:f6}                  |{4, 20:f6}              |{5, 20:f6}            |{6, 12}         |
+|---------------+------------------+---------------------+----------------------------------------+----------------------------------+--------------------------------+---------------------|", z + 1, population, MaxIteration, averDer, minDeviation, normalDerivation, successCount));
                     r.Write("\n");
                     r.Close();
                     fs.Close();
