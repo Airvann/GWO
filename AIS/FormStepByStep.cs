@@ -151,7 +151,7 @@ namespace AIS
 
                 algst.FormingPopulation();
 
-                algst.currentIteration = 0;                        // Счетчик итераций
+                algst.currentIteration = 1;                        // Счетчик итераций
                 dataGridViewIterationInfo.Rows[0].Cells[1].Value = algst.currentIteration;
                 dataGridViewIterationInfo.Rows[1].Cells[1].Value = algst.population;
                 dataGridViewIterationInfo.Rows[2].Cells[1].Value = algst.MaxCount;
@@ -472,7 +472,6 @@ namespace AIS
         {
             if (Red[3] == true)
             {
-
                 if (algst.currentIteration < algst.MaxCount)
                 {
                     algst.Selection();
@@ -486,7 +485,7 @@ namespace AIS
                 }
                 else
                 {
-                    Red[2] = false;
+                    Red[3] = false;
                     Red[4] = true;
                 }
                 pictureBox1.Refresh();
@@ -514,7 +513,7 @@ namespace AIS
                 e.Graphics.DrawLine(p1, w - 5, y0, w - 15, y0 + 5);
                 e.Graphics.DrawLine(p1, w - 5, y0, w - 15, y0 - 5);
 
-                float mx = (w - 60) / (algst.currentIteration + 5);//(algst.MaxCount);
+                float mx = (w - 60) / (algst.currentIteration + 5);
                 float mh = 0;
                 try { mh = (float)((h - 60) / ((1.1 * exact - Math.Min(0, algst.averageFitness[0])))); }
                 catch { mh = (float)((h - 60) / (1.1 * exact)); }
@@ -596,13 +595,12 @@ namespace AIS
                 e.Graphics.DrawString("f", f2, Brushes.Black, (float)(x0 - 24), (float)(2));
             }
         }
-
         private void buttonAnswer_Click(object sender, EventArgs e)
         {
             if (Red[3] == true) 
             {
                 Red[3] = false;
-                for (int i = 0; algst.currentIteration < MaxIteration; i++)
+                for (int i = 1; algst.currentIteration < MaxIteration; i++)
                 {
                     algst.Selection();
                     algst.NewPackGeneration();

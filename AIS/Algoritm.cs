@@ -137,7 +137,7 @@ namespace AIS
 
             FormingPopulation();
 
-            for (int k = 0; k < MaxCount; k++)
+            for (int k = 1; k < MaxCount; k++)
             {
                 Selection();
                 NewPackGeneration();
@@ -159,7 +159,7 @@ namespace AIS
             //Формирование начальной популяции на множестве D
             FormingPopulation();
             
-            for (int k = 0; k < MaxCount; k++)
+            for (int k = 1; k < MaxCount; k++)
             {
                 //Выбор трех наилучших
                 Selection();

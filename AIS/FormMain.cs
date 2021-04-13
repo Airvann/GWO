@@ -16,7 +16,6 @@ namespace AIS
         private int MaxIteration = 0;
         private double[,] obl = new double[2, 2];
 
-        //private double[] exactPoint = new double[2];
         private List<Vector> exactPoints;
 
 
@@ -164,8 +163,7 @@ namespace AIS
                 Ar[4] = 0.9F;
                 flag = true;
                 pictureBox2.Image = Properties.Resources.рут;
-
-            }
+            } 
             else if (comboBox1.SelectedIndex == 3)
             {
                 dataGridView1.Rows[0].Cells[1].Value = "-10";
@@ -182,7 +180,6 @@ namespace AIS
                 Ar[4] = 0.99F;
                 flag = true;
                 pictureBox2.Image = Properties.Resources.Шафер;
-
             }
             else if (comboBox1.SelectedIndex == 4)
             {
@@ -191,7 +188,7 @@ namespace AIS
                 dataGridView1.Rows[1].Cells[1].Value = "-5";
                 dataGridView1.Rows[1].Cells[2].Value = "5";
                 exact = 20;
-                exactPoints.Add(new Vector(1.6288, 1.6288));
+                exactPoints.Add(new Vector(0, 0));
 
                 Ar[0] = -20F;
                 Ar[1] = -10F;
@@ -200,7 +197,6 @@ namespace AIS
                 Ar[4] = 19F;
                 flag = true;
                 pictureBox2.Image = Properties.Resources.Растригин;
-
             }
             else if (comboBox1.SelectedIndex == 5)
             {
@@ -208,7 +204,7 @@ namespace AIS
                 dataGridView1.Rows[0].Cells[2].Value = "10";
                 dataGridView1.Rows[1].Cells[1].Value = "-10";
                 dataGridView1.Rows[1].Cells[2].Value = "10";
-                exact = 0;
+                exact = 20;
                 exactPoints.Add(new Vector(0, 0));
 
                 Ar[0] = 4F;
@@ -226,7 +222,7 @@ namespace AIS
                 dataGridView1.Rows[1].Cells[1].Value = "-5";
                 dataGridView1.Rows[1].Cells[2].Value = "5";
                 exact = 14.060606;
-                exactPoints.Add(new Vector(3.3157, -3.0725));
+                exactPoints.Add(new Vector(-3.3157, -3.0725));
 
                 Ar[0] = 2F;
                 Ar[1] = 8F;
