@@ -16,7 +16,9 @@ namespace AIS
         private int MaxIteration = 0;
         private double[,] obl = new double[2, 2];
 
-        private double[] exactPoint = new double[2];
+        //private double[] exactPoint = new double[2];
+        private List<Vector> exactPoints;
+
 
         //Не мое
         private bool[] flines = new bool[8];
@@ -103,6 +105,7 @@ namespace AIS
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            exactPoints = new List<Vector>();
             if (comboBox1.SelectedIndex == 0)
             {
                 dataGridView1.Rows[0].Cells[1].Value = "-500";
@@ -110,7 +113,7 @@ namespace AIS
                 dataGridView1.Rows[1].Cells[1].Value = "-500";
                 dataGridView1.Rows[1].Cells[2].Value = "500";
                 exact = 837.9658;
-                exactPoint[0] = 420.9687;   exactPoint[1] = 420.9687;
+                exactPoints.Add(new Vector(420.9687, 420.9687));
 
                 Ar[0] = -200;
                 Ar[1] = -1;
@@ -127,7 +130,10 @@ namespace AIS
                 dataGridView1.Rows[1].Cells[1].Value = "-2";
                 dataGridView1.Rows[1].Cells[2].Value = "2";
                 exact = 4.253888;
-                exactPoint[0] = 1.6288; exactPoint[1] = 1.6288;
+                exactPoints.Add(new Vector(-1.6288, -1.6288));
+                exactPoints.Add(new Vector(1.6288, 1.6288));
+                exactPoints.Add(new Vector(-1.6288, 1.6288));
+                exactPoints.Add(new Vector(1.6288, -1.6288));
 
                 Ar[0] = 0;
                 Ar[1] = 1;
@@ -144,7 +150,12 @@ namespace AIS
                 dataGridView1.Rows[1].Cells[1].Value = "-2";
                 dataGridView1.Rows[1].Cells[2].Value = "2";
                 exact = 1;
-                exactPoint[0] = 0.5; exactPoint[1] = 0.866;
+                exactPoints.Add(new Vector(0.5, -0.866));
+                exactPoints.Add(new Vector(-0.5, 0.866));
+                exactPoints.Add(new Vector(0.5, 0.866));
+                exactPoints.Add(new Vector(-0.5, -0.866));
+                exactPoints.Add(new Vector(1, 0));
+                exactPoints.Add(new Vector(-1, 0));
 
                 Ar[0] = 0.2F;
                 Ar[1] = 0.45F;
@@ -162,7 +173,7 @@ namespace AIS
                 dataGridView1.Rows[1].Cells[1].Value = "-10";
                 dataGridView1.Rows[1].Cells[2].Value = "10";
                 exact = 1;
-                exactPoint[0] = 0; exactPoint[1] = 0;
+                exactPoints.Add(new Vector(0, 0));
 
                 Ar[0] = 0.2F;
                 Ar[1] = 0.4F;
@@ -180,7 +191,7 @@ namespace AIS
                 dataGridView1.Rows[1].Cells[1].Value = "-5";
                 dataGridView1.Rows[1].Cells[2].Value = "5";
                 exact = 20;
-                exactPoint[0] = 1.6288; exactPoint[1] = 1.6288; //?
+                exactPoints.Add(new Vector(1.6288, 1.6288));
 
                 Ar[0] = -20F;
                 Ar[1] = -10F;
@@ -198,7 +209,7 @@ namespace AIS
                 dataGridView1.Rows[1].Cells[1].Value = "-10";
                 dataGridView1.Rows[1].Cells[2].Value = "10";
                 exact = 0;
-                exactPoint[0] = 0; exactPoint[1] = 0;
+                exactPoints.Add(new Vector(0, 0));
 
                 Ar[0] = 4F;
                 Ar[1] = 7F;
@@ -215,7 +226,7 @@ namespace AIS
                 dataGridView1.Rows[1].Cells[1].Value = "-5";
                 dataGridView1.Rows[1].Cells[2].Value = "5";
                 exact = 14.060606;
-                exactPoint[0] = -3.3157; exactPoint[1] = -3.0725;
+                exactPoints.Add(new Vector(3.3157, -3.0725));
 
                 Ar[0] = 2F;
                 Ar[1] = 8F;
@@ -232,7 +243,7 @@ namespace AIS
                 dataGridView1.Rows[1].Cells[1].Value = "-5";
                 dataGridView1.Rows[1].Cells[2].Value = "5";
                 exact = 1;
-                exactPoint[0] = 1; exactPoint[1] = -2;
+                exactPoints.Add(new Vector(1, -2));
 
                 Ar[0] = 0.1F;
                 Ar[1] = 0.15F;
@@ -249,7 +260,7 @@ namespace AIS
                 dataGridView1.Rows[1].Cells[1].Value = "-1";
                 dataGridView1.Rows[1].Cells[2].Value = "5";
                 exact = 0;
-                exactPoint[0] = 1; exactPoint[1] = 1;
+                exactPoints.Add(new Vector(1, 1));
 
                 Ar[0] = -350F;
                 Ar[1] = -180F;
@@ -266,7 +277,7 @@ namespace AIS
                 dataGridView1.Rows[1].Cells[1].Value = "-5";
                 dataGridView1.Rows[1].Cells[2].Value = "5";
                 exact = 0;
-                exactPoint[0] = 0; exactPoint[1] = 0;
+                exactPoints.Add(new Vector(0, 0));
 
                 Ar[0] = -7F;
                 Ar[1] = -4F;
@@ -563,8 +574,16 @@ namespace AIS
                     {
                         alg = new Algoritm();
                         Wolf result = alg.FastStartAlg(population, MaxIteration, obl, z, param);
-                        if ((Math.Abs(result.coords[0] - exactPoint[0]) < eps) && (Math.Abs(result.coords[1] - exactPoint[1]) < eps))
-                            successCount++;
+
+                        foreach (Vector item in exactPoints)
+                        {
+                            if ((Math.Abs(result.coords[0] - item[0]) < eps) && (Math.Abs(result.coords[1] - item[1]) < eps)) 
+                            {
+                                successCount++;
+                                break;
+                            }
+                        }
+
                         averFuncDeviation.Add(Math.Abs(result.fitness - exact));
                     }
 
