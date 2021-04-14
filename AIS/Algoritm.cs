@@ -48,9 +48,16 @@ namespace AIS
         //Параметр а
         private double a;
 
-        private Vector A = new Vector();
+        private Vector A_alfa = new Vector();
+        private Vector A_beta = new Vector();
+        private Vector A_delta = new Vector();
 
-        private Vector C = new Vector();
+        private Vector C_alfa  = new Vector();
+        private Vector C_beta  = new Vector();
+        private Vector C_delta = new Vector();
+
+        //private Vector A = new Vector();
+        //private Vector C = new Vector();
 
         //Популяция волков
         public List<Wolf> individuals = new List<Wolf>();
@@ -95,18 +102,27 @@ namespace AIS
 
             for (int k = 0; k < population; k++)
             {
+
+                A_alfa[0] = (2 * a * rand.NextDouble()) - a; A_alfa[1] = (2 * a * rand.NextDouble()) - a;
+                A_beta[0] = (2 * a * rand.NextDouble()) - a; A_beta[1] = (2 * a * rand.NextDouble()) - a;
+                A_delta[0] = (2 * a * rand.NextDouble()) - a; A_delta[1] = (2 * a * rand.NextDouble()) - a;
+
+                C_alfa[0] = 2 * rand.NextDouble(); C_alfa[1] = 2 * rand.NextDouble();
+                C_beta[0] = 2 * rand.NextDouble(); C_beta[1] = 2 * rand.NextDouble();
+                C_delta[0] = 2 * rand.NextDouble(); C_delta[1] = 2 * rand.NextDouble();
+                /*
                 A[0] = 2 * a * rand.NextDouble() - a;           A[1] = 2 * a * rand.NextDouble() - a;
                 C[0] = 2 * rand.NextDouble();                   C[1] = 2 * rand.NextDouble();
+                */
+                Vector D_alfa = Vector.Norm(Vector.HadamardMultiply(C_alfa, alfa.coords) - individuals[k].coords);
 
-                Vector D_alfa = Vector.Norm(Vector.HadamardMultiply(C, alfa.coords) - individuals[k].coords);
+                Vector D_beta = Vector.Norm(Vector.HadamardMultiply(C_beta, beta.coords) - individuals[k].coords);
 
-                Vector D_beta = Vector.Norm(Vector.HadamardMultiply(C, beta.coords) - individuals[k].coords);
+                Vector D_delta = Vector.Norm(Vector.HadamardMultiply(C_delta, delta.coords) - individuals[k].coords);
 
-                Vector D_delta = Vector.Norm(Vector.HadamardMultiply(C, delta.coords) - individuals[k].coords);
-
-                individuals[k].coords = ((alfa.coords - Vector.HadamardMultiply(D_alfa, A)) +
-                                             (beta.coords - Vector.HadamardMultiply(D_beta, A)) +
-                                             (delta.coords - Vector.HadamardMultiply(D_delta, A))) / 3.0;
+                individuals[k].coords = ((alfa.coords - Vector.HadamardMultiply(D_alfa, A_alfa)) +
+                                             (beta.coords - Vector.HadamardMultiply(D_beta, A_beta)) +
+                                             (delta.coords - Vector.HadamardMultiply(D_delta, A_delta))) / 3.0;
 
                 double x = individuals[k].coords[0];
                 double y = individuals[k].coords[1];
