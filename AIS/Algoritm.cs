@@ -56,9 +56,6 @@ namespace AIS
         private Vector C_beta  = new Vector();
         private Vector C_delta = new Vector();
 
-        //private Vector A = new Vector();
-        //private Vector C = new Vector();
-
         //Популяция волков
         public List<Wolf> individuals = new List<Wolf>();
 
@@ -80,7 +77,6 @@ namespace AIS
                 individuals.Add(wolf);
             }
         }
-
         public void Selection()
         {
             individuals = individuals.OrderByDescending(s => s.fitness).ToList();
@@ -103,17 +99,15 @@ namespace AIS
             for (int k = 0; k < population; k++)
             {
 
-                A_alfa[0] = (2 * a * rand.NextDouble()) - a; A_alfa[1] = (2 * a * rand.NextDouble()) - a;
-                A_beta[0] = (2 * a * rand.NextDouble()) - a; A_beta[1] = (2 * a * rand.NextDouble()) - a;
-                A_delta[0] = (2 * a * rand.NextDouble()) - a; A_delta[1] = (2 * a * rand.NextDouble()) - a;
+                A_alfa[0] = 2 * a * rand.NextDouble() - a;          A_alfa[1] =  2 * a * rand.NextDouble() - a;
+                A_beta[0] = 2 * a * rand.NextDouble() - a;          A_beta[1] =  2 * a * rand.NextDouble() - a;
+                A_delta[0] = 2 * a * rand.NextDouble() - a;         A_delta[1] = 2 * a * rand.NextDouble() - a;
 
-                C_alfa[0] = 2 * rand.NextDouble(); C_alfa[1] = 2 * rand.NextDouble();
-                C_beta[0] = 2 * rand.NextDouble(); C_beta[1] = 2 * rand.NextDouble();
-                C_delta[0] = 2 * rand.NextDouble(); C_delta[1] = 2 * rand.NextDouble();
-                /*
-                A[0] = 2 * a * rand.NextDouble() - a;           A[1] = 2 * a * rand.NextDouble() - a;
-                C[0] = 2 * rand.NextDouble();                   C[1] = 2 * rand.NextDouble();
-                */
+                C_alfa[0] = 2 * rand.NextDouble();                  C_alfa[1] = 2 * rand.NextDouble();
+                C_beta[0] = 2 * rand.NextDouble();                  C_beta[1] = 2 * rand.NextDouble();
+                C_delta[0] = 2 * rand.NextDouble();                 C_delta[1] = 2 * rand.NextDouble();
+
+
                 Vector D_alfa = Vector.Norm(Vector.HadamardMultiply(C_alfa, alfa.coords) - individuals[k].coords);
 
                 Vector D_beta = Vector.Norm(Vector.HadamardMultiply(C_beta, beta.coords) - individuals[k].coords);
@@ -142,7 +136,6 @@ namespace AIS
         }
 
         //Старт алгоритма
-
         public Wolf FastStartAlg(int population, int MaxCount, double[,] D, int f, Params param) 
         {
             this.param = param;
@@ -162,37 +155,7 @@ namespace AIS
             Selection();
             return alfa;
         }
-
-        public Wolf StartAlg(int population, int MaxCount, double[,] D, int f, Params param)
-        {
-            //Передача параметров в алгоритм
-            this.param = param;
-            this.MaxCount = MaxCount;
-            this.population = population;
-            this.D = D;
-            this.f = f;
-
-            //Формирование начальной популяции на множестве D
-            FormingPopulation();
-            
-            for (int k = 1; k < MaxCount; k++)
-            {
-                //Выбор трех наилучших
-                Selection();
-                
-                //Вычисление и добавление средней и лучшей приспособленности в список
-                bestFitness.Add(alfa.fitness);
-                AverageFitness();
-
-                //Перемещение волков
-                NewPackGeneration();
-                currentIteration++;
-            }
-            //Финальная селекция, определение наиболее приспособленного волка
-            Selection();
-            return alfa;
-        }
-
+        
         //Все тестовые функции
         private float function(double x1, double x2, int f)
         {

@@ -10,16 +10,12 @@ namespace AIS
 {
     public partial class FormMain : Form
     {
-        //Мое
         private Algoritm alg;
         private int population = 0;
         private int MaxIteration = 0;
         private double[,] obl = new double[2, 2];
-
         private List<Vector> exactPoints;
 
-
-        //Не мое
         private bool[] flines = new bool[8];
         private float k = 1;
         private float[] Ar = new float[8];
@@ -30,7 +26,9 @@ namespace AIS
 
         public FormMain()
         {
+            
             InitializeComponent();
+            comboBoxSelectParams.SelectedIndex = 0;
             InitDataGridView();
 
             comboBoxSelectParams.SelectedIndexChanged += new EventHandler(comboBox_SelectedIndexChanged);
@@ -63,6 +61,7 @@ namespace AIS
             dataGridView2.Rows[1].Cells[1].Value = 100;
 
             dataGridView3.RowCount = 3;
+            dataGridView3.Columns[0].DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Italic);
             dataGridView3.Rows[0].Cells[0].Value = "x";
             dataGridView3.Rows[1].Cells[0].Value = "y";
             dataGridView3.Rows[2].Cells[0].Value = "f*";            
@@ -511,7 +510,7 @@ namespace AIS
 
         private void comboBox_SelectedIndexChanged(object sender, EventArgs e) 
         {
-            if ((comboBox1.SelectedIndex != -1) && (comboBoxSelectParams.SelectedIndex != -1))
+            if (comboBox1.SelectedIndex != -1)
             {
                 buttonAnswer.Enabled = true;
                 buttonStepByStep.Enabled = true;
@@ -609,6 +608,12 @@ namespace AIS
             }
             else
                 MessageBox.Show("Введите корректные параметры", "Ошибка при запуске алгоритма", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (File.Exists("protocol.txt"))
+                File.Delete("protocol.txt");
         }
     }
 }

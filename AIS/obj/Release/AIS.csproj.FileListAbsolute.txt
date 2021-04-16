@@ -1,0 +1,11 @@
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\bin\Release\AIS.exe.config
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\bin\Release\AIS.exe
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\bin\Release\AIS.pdb
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Release\AIS.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Release\AIS.FormStepByStep.resources
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Release\AIS.FormMain.resources
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Release\AIS.Properties.Resources.resources
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Release\AIS.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Release\AIS.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Release\AIS.exe
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Release\AIS.pdb

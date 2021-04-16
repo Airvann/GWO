@@ -139,7 +139,7 @@ namespace AIS
                 for (int i = 1; i < stepsCount; i++)
                     Red[i] = false;
 
-                flag = true;                   //Начало работы алгоритма
+                flag = true;    //Начало работы алгоритма
 
                 algst = new Algoritm
                 {
@@ -413,7 +413,7 @@ namespace AIS
 
         private void UpdateIterationInfo()
         {
-
+            dataGridViewIterationInfo.Rows[0].Cells[1].Value = String.Format($"{algst.currentIteration}");
             dataGridViewIterationInfo.Rows[3].Cells[1].Value = String.Format($"{algst.alfa.coords.vector[0]:F2}   {algst.alfa.coords.vector[1]:F2}");
             dataGridViewIterationInfo.Rows[4].Cells[1].Value = String.Format($"{algst.alfa.fitness:F2}");
             dataGridViewIterationInfo.Rows[5].Cells[1].Value = String.Format($"{algst.averageFitness[algst.averageFitness.Count - 1]:F7}");

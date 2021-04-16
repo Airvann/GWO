@@ -55,7 +55,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.comboBoxSelectParams = new System.Windows.Forms.ComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -109,12 +108,13 @@
             // comboBox1
             // 
             this.comboBox1.DisplayMember = "0";
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "1. Функция Швефеля",
             "2. Мульти-функция",
             "3. Корневая функция",
-            "4. Функция Шафера",
+            "4. Функция Шаффера",
             "5. Функция Растригина",
             "6. Функция Экли",
             "7. Кожа",
@@ -200,7 +200,6 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.pictureBox2);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.dataGridView2);
             this.groupBox1.Controls.Add(this.dataGridView1);
@@ -214,9 +213,10 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.BackColor = System.Drawing.SystemColors.Window;
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox4.InitialImage = null;
-            this.pictureBox4.Location = new System.Drawing.Point(6, 502);
+            this.pictureBox4.Location = new System.Drawing.Point(6, 494);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(156, 70);
             this.pictureBox4.TabIndex = 32;
@@ -225,19 +225,20 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 453);
+            this.label6.Location = new System.Drawing.Point(6, 440);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 16);
+            this.label6.Size = new System.Drawing.Size(212, 16);
             this.label6.TabIndex = 31;
-            this.label6.Text = "Параметр а:";
+            this.label6.Text = "Закон изменения параметра а:";
             // 
             // comboBoxSelectParams
             // 
+            this.comboBoxSelectParams.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSelectParams.FormattingEnabled = true;
             this.comboBoxSelectParams.Items.AddRange(new object[] {
             "1. Линейная функция",
             "2. Квадратичная функция"});
-            this.comboBoxSelectParams.Location = new System.Drawing.Point(6, 472);
+            this.comboBoxSelectParams.Location = new System.Drawing.Point(6, 464);
             this.comboBoxSelectParams.Name = "comboBoxSelectParams";
             this.comboBoxSelectParams.Size = new System.Drawing.Size(223, 24);
             this.comboBoxSelectParams.TabIndex = 30;
@@ -245,22 +246,13 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.Window;
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox2.Location = new System.Drawing.Point(6, 83);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(355, 129);
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(3, 342);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 16);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Параметры алгоритма:";
             // 
             // dataGridView2
             // 
@@ -289,7 +281,7 @@
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 361);
+            this.dataGridView2.Location = new System.Drawing.Point(6, 342);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView2.RowHeadersVisible = false;
@@ -510,6 +502,7 @@
             this.Name = "FormMain";
             this.Text = "Метод, имитирующий поведение стаи серых волков поиска условного экстремума функци" +
     "й";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -539,7 +532,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Button buttonStepByStep;
         private System.Windows.Forms.Button button5;

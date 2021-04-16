@@ -70,9 +70,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(832, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(337, 16);
+            this.label1.Size = new System.Drawing.Size(430, 16);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Графическое изображение популяции и функции ";
+            this.label1.Text = "Графическое изображение популяции и линий уровня функции ";
             // 
             // buttonMove
             // 
@@ -81,7 +81,7 @@
             this.buttonMove.Name = "buttonMove";
             this.buttonMove.Size = new System.Drawing.Size(135, 75);
             this.buttonMove.TabIndex = 10;
-            this.buttonMove.Text = "Найти новые положения волков в стае";
+            this.buttonMove.Text = "Найти новые положения волков \r\nв стае";
             this.buttonMove.UseVisualStyleBackColor = true;
             this.buttonMove.Click += new System.EventHandler(this.buttonMove_Click);
             // 
@@ -92,7 +92,7 @@
             this.buttonBest.Name = "buttonBest";
             this.buttonBest.Size = new System.Drawing.Size(135, 75);
             this.buttonBest.TabIndex = 12;
-            this.buttonBest.Text = "Найти трех волков-лидеров в популяции";
+            this.buttonBest.Text = "Найти трех волков-лидеров\r\nв популяции";
             this.buttonBest.UseVisualStyleBackColor = true;
             this.buttonBest.Click += new System.EventHandler(this.buttonBest_Click);
             // 
@@ -103,7 +103,7 @@
             this.buttonEndVerify.Name = "buttonEndVerify";
             this.buttonEndVerify.Size = new System.Drawing.Size(135, 75);
             this.buttonEndVerify.TabIndex = 15;
-            this.buttonEndVerify.Text = "Проверка условия заверщения локального поиска";
+            this.buttonEndVerify.Text = "Проверка условия завершения локального поиска";
             this.buttonEndVerify.UseVisualStyleBackColor = true;
             this.buttonEndVerify.Click += new System.EventHandler(this.buttonEndVerify_Click);
             // 
@@ -124,7 +124,7 @@
             this.buttonStart.Location = new System.Drawing.Point(25, 19);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(135, 75);
-            this.buttonStart.TabIndex = 18;
+            this.buttonStart.TabIndex = 10;
             this.buttonStart.Text = "Создание начальной популяции";
             this.buttonStart.UseVisualStyleBackColor = true;
             this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
@@ -187,7 +187,7 @@
             // 
             this.buttonAnswer.Enabled = false;
             this.buttonAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonAnswer.Location = new System.Drawing.Point(25, 620);
+            this.buttonAnswer.Location = new System.Drawing.Point(25, 636);
             this.buttonAnswer.Name = "buttonAnswer";
             this.buttonAnswer.Size = new System.Drawing.Size(175, 51);
             this.buttonAnswer.TabIndex = 21;
@@ -199,7 +199,7 @@
             // 
             this.buttonNext.Enabled = false;
             this.buttonNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonNext.Location = new System.Drawing.Point(213, 620);
+            this.buttonNext.Location = new System.Drawing.Point(213, 636);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(175, 51);
             this.buttonNext.TabIndex = 22;
