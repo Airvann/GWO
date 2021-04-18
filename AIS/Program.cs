@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace AIS
+namespace GWO
 {
     static class Program
     {

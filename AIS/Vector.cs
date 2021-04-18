@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AIS
+namespace GWO
 {
     public class Vector
     {

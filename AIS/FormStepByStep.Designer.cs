@@ -1,4 +1,4 @@
-﻿namespace AIS
+﻿namespace GWO
 {
     partial class FormStepByStep
     {
@@ -49,12 +49,13 @@
             this.buttonNext = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridViewIterationInfo = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBoxDiagramm = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBoxGraph = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAnswer)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -68,7 +69,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(832, 19);
+            this.label1.Location = new System.Drawing.Point(832, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(430, 16);
             this.label1.TabIndex = 4;
@@ -133,9 +134,9 @@
             // 
             this.groupBox1.Controls.Add(this.dataGridViewAnswer);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(835, 531);
+            this.groupBox1.Location = new System.Drawing.Point(835, 564);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(346, 156);
+            this.groupBox1.Size = new System.Drawing.Size(332, 123);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ответ";
@@ -163,10 +164,10 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewAnswer.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewAnswer.Enabled = false;
-            this.dataGridViewAnswer.Location = new System.Drawing.Point(14, 30);
+            this.dataGridViewAnswer.Location = new System.Drawing.Point(6, 21);
             this.dataGridViewAnswer.Name = "dataGridViewAnswer";
             this.dataGridViewAnswer.RowHeadersVisible = false;
-            this.dataGridViewAnswer.Size = new System.Drawing.Size(320, 93);
+            this.dataGridViewAnswer.Size = new System.Drawing.Size(318, 92);
             this.dataGridViewAnswer.TabIndex = 0;
             // 
             // Column3
@@ -211,9 +212,9 @@
             // 
             this.groupBox2.Controls.Add(this.dataGridViewIterationInfo);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox2.Location = new System.Drawing.Point(403, 417);
+            this.groupBox2.Location = new System.Drawing.Point(416, 489);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(426, 270);
+            this.groupBox2.Size = new System.Drawing.Size(402, 198);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Информация о текущей популяции";
@@ -241,29 +242,11 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewIterationInfo.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewIterationInfo.Enabled = false;
-            this.dataGridViewIterationInfo.Location = new System.Drawing.Point(13, 33);
+            this.dataGridViewIterationInfo.Location = new System.Drawing.Point(6, 30);
             this.dataGridViewIterationInfo.Name = "dataGridViewIterationInfo";
             this.dataGridViewIterationInfo.RowHeadersVisible = false;
-            this.dataGridViewIterationInfo.Size = new System.Drawing.Size(402, 221);
+            this.dataGridViewIterationInfo.Size = new System.Drawing.Size(389, 158);
             this.dataGridViewIterationInfo.TabIndex = 1;
-            // 
-            // Column1
-            // 
-            this.Column1.Frozen = true;
-            this.Column1.HeaderText = "Характеристика";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 280;
-            // 
-            // Column2
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column2.Frozen = true;
-            this.Column2.HeaderText = "Значение";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column2.Width = 120;
             // 
             // pictureBoxDiagramm
             // 
@@ -278,7 +261,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Window;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(835, 35);
+            this.pictureBox1.Location = new System.Drawing.Point(835, 31);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(490, 490);
             this.pictureBox1.TabIndex = 1;
@@ -288,9 +271,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(413, 21);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(413, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(310, 26);
+            this.label2.Size = new System.Drawing.Size(398, 32);
             this.label2.TabIndex = 26;
             this.label2.Text = "График изменения средней (зеленый) и наилучшей (синий) \r\nприспособленности популя" +
     "ции:";
@@ -301,16 +285,47 @@
             this.pictureBoxGraph.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBoxGraph.Location = new System.Drawing.Point(416, 50);
             this.pictureBoxGraph.Name = "pictureBoxGraph";
-            this.pictureBoxGraph.Size = new System.Drawing.Size(300, 300);
+            this.pictureBoxGraph.Size = new System.Drawing.Size(402, 361);
             this.pictureBoxGraph.TabIndex = 25;
             this.pictureBoxGraph.TabStop = false;
             this.pictureBoxGraph.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxGraph_Paint);
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(835, 524);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(490, 37);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Красная, желтая и зеленая окружности на графике соответствуют первому, второму и " +
+    "третьему значению по величине функции на текущей итерации.";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // Column1
+            // 
+            this.Column1.Frozen = true;
+            this.Column1.HeaderText = "Характеристика";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 275;
+            // 
+            // Column2
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column2.Frozen = true;
+            this.Column2.HeaderText = "Значение";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column2.Width = 112;
             // 
             // FormStepByStep
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1337, 704);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBoxGraph);
             this.Controls.Add(this.groupBox2);
@@ -358,9 +373,10 @@
         private System.Windows.Forms.DataGridView dataGridViewAnswer;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBoxGraph;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

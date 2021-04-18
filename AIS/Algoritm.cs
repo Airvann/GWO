@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AIS
+namespace GWO
 {
     //Тип параметра а: линейная или квадратичная функция
     public enum Params

@@ -1,0 +1,11 @@
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\bin\Debug\GWO.exe.config
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\bin\Debug\GWO.exe
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\bin\Debug\GWO.pdb
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Debug\GWO.FormStepByStep.resources
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Debug\GWO.FormMain.resources
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Debug\GWO.Properties.Resources.resources
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Debug\GWO.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Debug\GWO.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Debug\GWO.exe
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Debug\GWO.pdb
+C:\Users\Admin\source\repos\AIS(18.10.12)\AIS\obj\Debug\GWO.csprojAssemblyReference.cache

@@ -1,4 +1,4 @@
-﻿namespace AIS
+﻿namespace GWO
 {
     partial class FormMain
     {
@@ -420,7 +420,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox3.Image = global::AIS.Properties.Resources.ПостановкаМаксимум;
+            this.pictureBox3.Image = global::GWO.Properties.Resources.ПостановкаМаксимум;
             this.pictureBox3.Location = new System.Drawing.Point(11, 34);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(352, 181);

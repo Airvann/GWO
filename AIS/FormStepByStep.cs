@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace AIS
+namespace GWO
 {
     public partial class FormStepByStep : Form
     {
@@ -11,6 +11,7 @@ namespace AIS
         {
             InitializeComponent();
             InitDataGridView();
+
 
             this.z = z;
             this.obl = obl;
@@ -40,6 +41,7 @@ namespace AIS
 
         private void InitDataGridView()
         {
+            dataGridViewAnswer.Columns[0].DefaultCellStyle.Font = new Font("Times new roman", 12, FontStyle.Italic);
             dataGridViewAnswer.RowCount = 3;
             dataGridViewAnswer.Rows[0].Cells[0].Value = "x";
             dataGridViewAnswer.Rows[1].Cells[0].Value = "y";

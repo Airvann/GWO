@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using System.IO;
 
-namespace AIS
+namespace GWO
 {
     public partial class FormMain : Form
     {
@@ -26,7 +26,6 @@ namespace AIS
 
         public FormMain()
         {
-            
             InitializeComponent();
             comboBoxSelectParams.SelectedIndex = 0;
             InitDataGridView();
@@ -61,7 +60,7 @@ namespace AIS
             dataGridView2.Rows[1].Cells[1].Value = 100;
 
             dataGridView3.RowCount = 3;
-            dataGridView3.Columns[0].DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Italic);
+            dataGridView3.Columns[0].DefaultCellStyle.Font = new Font("Times new roman", 12, FontStyle.Italic);
             dataGridView3.Rows[0].Cells[0].Value = "x";
             dataGridView3.Rows[1].Cells[0].Value = "y";
             dataGridView3.Rows[2].Cells[0].Value = "f*";            
