@@ -50,6 +50,7 @@ namespace GWO
         private void InitDataGridView()
         {
             dataGridView1.RowCount = 2;
+            dataGridView1.Columns[0].DefaultCellStyle.Font = new Font("Times new roman", 12, FontStyle.Italic);
             dataGridView1.Rows[0].Cells[0].Value = "x";
             dataGridView1.Rows[1].Cells[0].Value = "y";
 
