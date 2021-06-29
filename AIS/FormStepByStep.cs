@@ -593,7 +593,7 @@ namespace GWO
                     e.Graphics.DrawLine(p1, (float)(x0 + 2), (float)(zero - mh * c * i), (float)(x0 - 2), (float)(zero - mh * c * i));
                     if ((zero - mh * c * i - 8 > 11) && (zero - mh * c * i - 8 < h - 20)) e.Graphics.DrawString(Convert.ToString((c * i)), f1, Brushes.Black, (float)(x0 - 24), (float)(zero - mh * c * i - 8));
                 }
-                e.Graphics.DrawString("MaxCount", f2, Brushes.Black, (float)(w - 15), (float)(y0 + 4));
+                e.Graphics.DrawString("k", f2, Brushes.Black, (float)(w - 15), (float)(y0 + 4));
                 e.Graphics.DrawString("f", f2, Brushes.Black, (float)(x0 - 24), (float)(2));
             }
         }
