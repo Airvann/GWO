@@ -82,9 +82,9 @@ namespace GWO
             individuals = individuals.OrderByDescending(s => s.fitness).ToList();
 
             //Выбираем наиболее приспосоленных волков (сделано так, чтобы была передача значений, а не ссылки) 
-            alfa.coords.vector[0] = individuals[0].coords.vector[0];    alfa.coords.vector[1] = individuals[0].coords.vector[1];    alfa.fitness = individuals[0].fitness;
-            beta.coords.vector[0] = individuals[1].coords.vector[0];    beta.coords.vector[1] = individuals[1].coords.vector[1];    beta.fitness = individuals[1].fitness;
-            delta.coords.vector[0] = individuals[2].coords.vector[0];   delta.coords.vector[1] = individuals[2].coords.vector[1];   delta.fitness = individuals[2].fitness;
+            alfa.coords[0] = individuals[0].coords[0];    alfa.coords[1] = individuals[0].coords[1];    alfa.fitness = individuals[0].fitness;
+            beta.coords[0] = individuals[1].coords[0];    beta.coords[1] = individuals[1].coords[1];    beta.fitness = individuals[1].fitness;
+            delta.coords[0] = individuals[2].coords[0];   delta.coords[1] = individuals[2].coords[1];   delta.fitness = individuals[2].fitness;
         }
 
         //Формирование новой стаи
@@ -94,7 +94,7 @@ namespace GWO
             if (param == Params.Quadratic)
                 a = 2 * (1 - ((currentIteration * currentIteration) / ((double)MaxCount * MaxCount)));
             else
-                a = 2 * (1 - currentIteration / (double)(MaxCount));
+                a = 2 - currentIteration*( (2) / (double)(MaxCount));
 
             for (int k = 0; k < population; k++)
             {
